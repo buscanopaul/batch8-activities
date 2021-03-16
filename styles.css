@@ -1,10 +1,19 @@
+body {
+    background-color: #272822;
+    max-width: 750px;
+    margin: 0 auto;
+    background-image: url(bg.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .container {
     text-align: center;
-    padding-top: 200px;
+    padding-top: 100px;
 }
 a {
     font-size: 40px;
-    color: #000;
+    color: #fff;
     text-decoration: none;
 }
 a:hover {
@@ -12,4 +21,38 @@ a:hover {
 }
 span {
     line-height: 100px;
+}
+.comment {
+    text-align: left;
+    padding-top: 30px;
+}
+.comment span {
+    color: #75715e;
+    font-size: 15px;
+    line-height: 25px;
+}
+.own span {
+    display: block;
+    color: #66d9ef;
+    font-size: 16px;
+    line-height: 26px;
+}
+.own {
+    text-align: left;
+    padding-top: 20px;
+}
+.own a {
+    color: #f92672;
+    font-size: 16px;
+    line-height: 26px;
+}
+@font-face {
+    font-family: SourceCodePro;
+    src: url('./SourceCodePro-Regular.ttf');
+}
+a, span {
+    font-family: 'SourceCodePro';
+}
+.smart-guy {
+    padding-top: 50px;
 }
