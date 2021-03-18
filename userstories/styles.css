@@ -1,0 +1,55 @@
+h1, h2, span, p, a {
+    color: #fff;
+    font-family: AdobeSongStd-Light;
+}
+body {
+    background-color: #000;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+#main {
+    display: flex;
+    padding-top: 100px;
+}
+@font-face {
+    font-family: AdobeSongStd-Light;
+    src: url('AdobeSongStd-Light.otf');
+}
+div#title-div {
+    text-align: center;
+}
+#title {
+    font-size: 50px;
+    line-height: 60px;
+    margin-bottom: 0;
+}
+#title b {
+    font-size: 120px;
+    line-height: 120px;
+    letter-spacing: 5px;
+}
+span.rest, #img-caption {
+    font-size: 30px;
+}
+p#tribute-info {
+    font-size: 20px;
+}
+div#title-div {
+    margin: auto;
+}
+div#img-div {
+    background-image: url(april-bg.jpg);
+    background-position: -18px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+img#icon {
+    width: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+h2#img-caption {
+    margin-top: 0;
+}
