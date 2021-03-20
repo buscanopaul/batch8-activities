@@ -145,15 +145,15 @@ form {
     resize: vertical;
 }
 select#dropdown {
-    width: 98%;
+    width: 98.5%;
 }
 select#most-like {
-    width: 98%;
+    width: 98.5%;
 }
   
 .submit-button {
     display: block;
-    width: 98%;
+    width: 98.5%;
     padding: 0.75rem;
     background:#000;
     color: inherit;
