@@ -2,12 +2,8 @@
 	box-sizing: border-box;
 }
 
-.container {
-    padding-bottom: 300px;
-    background-color: #EEF2F7;
-}
-
 body {
+	background-color: #EEF2F7;
 	margin: 0;
 	padding: 0;
 	font-family: Verdana, sans-serif;
