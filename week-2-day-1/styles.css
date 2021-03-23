@@ -61,6 +61,81 @@ h1 {
 	background-color: rgba(135,50,0,.5);
 }
 
+.black-horse {
+    background-image: url(black-knight.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+.black-rok {
+    background-image: url(black-rok.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+.black-bishop {
+    background-image: url(black-bishop.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+.black-king {
+    background-image: url(black-king.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+.black-queen {
+    background-image: url(black-queen.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+.black-pawn {
+    background-image: url(black-pawn.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+
+.white-horse {
+    background-image: url(white-knight.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+.white-rok {
+    background-image: url(white-rok.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+.white-bishop {
+    background-image: url(white-bishop.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+.white-king {
+    background-image: url(white-king.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+.white-queen {
+    background-image: url(white-queen.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+.white-pawn {
+    background-image: url(white-pawn.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+
+
 
 
 @media screen and (max-width: 799px) {
