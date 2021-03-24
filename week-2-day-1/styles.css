@@ -134,13 +134,3 @@ h1 {
     background-repeat: no-repeat;
     background-size: 40px;
 }
-
-
-
-
-@media screen and (max-width: 799px) {
-    .board {
-        max-width: 480px;
-        max-height: 480px;
-    }
-}
