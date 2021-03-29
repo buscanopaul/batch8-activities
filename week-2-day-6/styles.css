@@ -5,7 +5,7 @@ body {
     background-color: #000;
     background-size: cover;
 }
-  .wrapper {
+  /* .wrapper {
     border: 30px solid #462921;
     margin: 0 auto;
     display: grid;
@@ -25,7 +25,7 @@ body {
     grid-template-rows: auto;
     grid-auto-flow: row;
     align-items: strech;
-  }
+  } */
   
   .box {
     padding: 20px;
@@ -57,17 +57,6 @@ body {
     grid-row-end: 10;
   }
   
-  .box:nth-child(-2n+9), 
-  .box:nth-child(9) ~ div:nth-child(-2n+16), 
-  .box:nth-child(17) ~ div:nth-child(-2n+25), 
-  .box:nth-child(25) ~ div:nth-child(-2n+32), 
-  .box:nth-child(33) ~ div:nth-child(-2n+41), 
-  .box:nth-child(41) ~ div:nth-child(-2n+48), 
-  .box:nth-child(49) ~ div:nth-child(-2n+57), 
-  .box:nth-child(57) ~ div:nth-child(-2n+64){
-    background-color: #441a03;
-    color: #fff;
-  }
 
 .horse-white {
     background-image: url(horse-white.png);
@@ -150,4 +139,52 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 30px;
+}
+
+
+.grid {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(8, [col] 5vw);
+    grid-template-rows: repeat(8, [row] 5vw);
+    width: 40vw;
+    border: 3px solid #000;
+    box-shadow: 0 5px 8px #777;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    background-color: #b5915f;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+
+.grid b {
+    font-size: calc(5vw);
+    text-align: center;
+}
+
+.grid b:nth-child(n+1):nth-child(-n+8):nth-child(even) {
+    background-color: #441a03;
+}
+.grid b:nth-child(n+9):nth-child(-n+16):nth-child(odd) {
+    background-color: #441a03;
+}
+.grid b:nth-child(n+17):nth-child(-n+24):nth-child(even) {
+    background-color: #441a03;
+}
+.grid b:nth-child(n+25):nth-child(-n+32):nth-child(odd) {
+    background-color: #441a03;
+}
+.grid b:nth-child(n+33):nth-child(-n+40):nth-child(even) {
+    background-color: #441a03;
+}
+.grid b:nth-child(n+41):nth-child(-n+48):nth-child(odd) {
+    background-color: #441a03;
+}
+.grid b:nth-child(n+49):nth-child(-n+57):nth-child(even) {
+    background-color: #441a03;
+}
+.grid b:nth-child(n+57):nth-child(-n+64):nth-child(odd) {
+    background-color: #441a03;
 }

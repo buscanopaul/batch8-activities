@@ -2,108 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Chess Board Grid</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="wrapper">
-  <div class="top">
-    <div class="wrapper-inner">
-      <div class="box-inner">A</div>
-      <div class="box-inner">B</div>
-      <div class="box-inner">C</div>
-      <div class="box-inner">D</div>
-      <div class="box-inner">E</div>
-      <div class="box-inner">F</div>
-      <div class="box-inner">G</div>
-      <div class="box-inner">H</div>
-    </div>
-  </div>
-  <div class="box rook-black"></div>
-  <div class="box horse-black"></div>
-  <div class="box bishop-black"></div>
-  <div class="box king-black"></div>
-  <div class="box queen-black"></div>
-  <div class="box bishop-black"></div>
-  <div class="box horse-black"></div>
-  <div class="box rook-black"></div>
-
-  <div class="box pawn-black"></div>
-  <div class="box pawn-black"></div>
-  <div class="box pawn-black"></div>
-  <div class="box"></div>
-  <div class="box pawn-black"></div>
-  <div class="box pawn-black"></div>
-  <div class="box pawn-black"></div>
-  <div class="box pawn-black"></div>
-
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box pawn-black"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box pawn-white"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-
-  <div class="box pawn-white"></div>
-  <div class="box pawn-white"></div>
-  <div class="box pawn-white"></div>
-  <div class="box pawn-white"></div>
-  <div class="box"></div>
-  <div class="box pawn-white"></div>
-  <div class="box pawn-white"></div>
-  <div class="box pawn-white"></div>
-
-  <div class="box rook-white"></div>
-  <div class="box horse-white"></div>
-  <div class="box bishop-white"></div>
-  <div class="box queen-white"></div>
-  <div class="box king-white"></div>
-  <div class="box bishop-white"></div>
-  <div class="box horse-white"></div>
-  <div class="box rook-white"></div>
-  <div class="bottom">
-    <div class="wrapper-inner">
-      <div class="box-inner">A</div>
-      <div class="box-inner">B</div>
-      <div class="box-inner">C</div>
-      <div class="box-inner">D</div>
-      <div class="box-inner">E</div>
-      <div class="box-inner">F</div>
-      <div class="box-inner">G</div>
-      <div class="box-inner">H</div>
-    </div>
-  </div>
-
-</div>
-</body>
+    <main class="grid">
+        <b><span>♜</span></b>
+        <b><span>♞</span></b>
+        <b><span>♝</span></b>
+        <b><span>♛</span></b>
+        <b><span>♚</span></b>
+        <b><span>♝</span></b>
+        <b><span>♞</span></b>
+        <b><span>♜</span></b>
+    
+        <b><span>♟</span></b>
+        <b><span>♟</span></b>
+        <b><span>♟</span></b>
+        <b></b>
+        <b><span>♟</span></b>
+        <b><span>♟</span></b>
+        <b><span>♟</span></b>
+        <b><span>♟</span></b>
+    
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+    
+        <b></b>
+        <b></b>
+        <b></b>
+        <b><span>♟</span></b>
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+    
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+    
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+        <b><span>♙</span></b>
+        <b></b>
+        <b></b>
+        <b></b>
+    
+        <b><span>♙</span></b>
+        <b><span>♙</span></b>
+        <b><span>♙</span></b>
+        <b><span>♙</span></b>
+        <b></b>
+        <b><span>♙</span></b>
+        <b><span>♙</span></b>
+        <b><span>♙</span></b>
+    
+        <b><span>♖</span></b>
+        <b><span>♘</span></b>
+        <b><span>♗</span></b>
+        <b><span>♕</span></b>
+        <b><span>♔</span></b>
+        <b><span>♗</span></b>
+        <b><span>♘</span></b>
+        <b><span>♖</span></b>
+    </main>
+    </body>
 </html>
