@@ -209,4 +209,22 @@ body {
     padding-left: 3vw;
 }
 
+.grid b:nth-child(n+1):nth-child(-n+8){
+    border-top: 1px solid;
+}
+.grid b:nth-child(n+1):nth-child(-n+1), .grid b:nth-child(n+9):nth-child(-n+9), .grid b:nth-child(n+17):nth-child(-n+17), 
+.grid b:nth-child(n+25):nth-child(-n+25), .grid b:nth-child(n+33):nth-child(-n+33), .grid b:nth-child(n+41):nth-child(-n+41), 
+.grid b:nth-child(n+49):nth-child(-n+49), .grid b:nth-child(n+57):nth-child(-n+57){
+    border-left: 1px solid;
+}
+.grid b:nth-child(n+8):nth-child(-n+8), .grid b:nth-child(n+16):nth-child(-n+16), .grid b:nth-child(n+24):nth-child(-n+24),
+.grid b:nth-child(n+32):nth-child(-n+32), .grid b:nth-child(n+40):nth-child(-n+40), .grid b:nth-child(n+48):nth-child(-n+48),
+.grid b:nth-child(n+56):nth-child(-n+56), .grid b:nth-child(n+64):nth-child(-n+64){
+    border-right: 1px solid;
+}
+.grid b:nth-child(n+57):nth-child(-n+64) {
+    border-bottom: 1px solid;
+}
+
+
 
