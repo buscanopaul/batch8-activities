@@ -1,5 +1,5 @@
 body {
-    background-image: url(https://st2.depositphotos.com/3462697/7187/i/600/depositphotos_71875659-stock-photo-black-and-white-chessboard-background.jpg);
+    background-image: url(https://www.stpeter.com.ph/images/og-stpeter.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-color: #000;
@@ -30,7 +30,7 @@ body {
   .box {
     padding: 20px;
     font-size: 150%;
-    background-color: #b5915f;
+    background-color: #fff;
     color: #000;
     text-align: center;
   }
@@ -153,8 +153,8 @@ body {
     justify-content: center;
     align-content: center;
     margin: 0 auto;
-    background-color: #b5915f;
-    margin-top: 80px;
+    background-color: #fff;
+    margin-top: 20px;
     margin-bottom: 100px;
 }
 
@@ -165,26 +165,46 @@ body {
 }
 
 .grid b:nth-child(n+1):nth-child(-n+8):nth-child(even) {
-    background-color: #441a03;
+    background-color: #166b41;
 }
 .grid b:nth-child(n+9):nth-child(-n+16):nth-child(odd) {
-    background-color: #441a03;
+    background-color: #166b41;
 }
 .grid b:nth-child(n+17):nth-child(-n+24):nth-child(even) {
-    background-color: #441a03;
+    background-color: #166b41;
 }
 .grid b:nth-child(n+25):nth-child(-n+32):nth-child(odd) {
-    background-color: #441a03;
+    background-color: #166b41;
 }
 .grid b:nth-child(n+33):nth-child(-n+40):nth-child(even) {
-    background-color: #441a03;
+    background-color: #166b41;
 }
 .grid b:nth-child(n+41):nth-child(-n+48):nth-child(odd) {
-    background-color: #441a03;
+    background-color: #166b41;
 }
 .grid b:nth-child(n+49):nth-child(-n+57):nth-child(even) {
-    background-color: #441a03;
+    background-color: #166b41;
 }
 .grid b:nth-child(n+57):nth-child(-n+64):nth-child(odd) {
-    background-color: #441a03;
+    background-color: #166b41;
 }
+
+.header {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.peter-logo img {
+    width: 6vw;
+    height: auto;
+}
+.peter-quote span {
+    color: #fff;
+    font-size: 2vw;
+    padding-left: 3vw;
+}
+
+
