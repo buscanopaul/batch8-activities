@@ -154,8 +154,8 @@ body {
     align-content: center;
     margin: 0 auto;
     background-color: #fff;
-    margin-top: 20px;
-    margin-bottom: 100px;
+    margin-top: 1vw;
+    margin-bottom: 10vw;
     border-image: url(https://www.pngarts.com/files/8/Gold-Border-PNG-Background-Image.png) 115;
 
 }
@@ -194,7 +194,7 @@ body {
 .header {
     margin: 0 auto;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 1vw;
     display: flex;
     justify-content: center;
     align-items: center;
