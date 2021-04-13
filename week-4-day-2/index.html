@@ -13,13 +13,15 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    
     <div class="container-fluid full-nav">
       <div class="row section-nav">
         <div class="col-sm site-logo">
           <a href="#"><img src="assets/logo.png" /></a>
         </div>
         <div class="col-sm btn-purchase">
-          <a href="#"><img
+
+          <a class="hamburger" href="#"><img
             src="assets/menu.svg"
             class="img-fluid"
           /></a>
@@ -63,7 +65,7 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div id="nav-bar" class="container">
       <div class="row row-menu">
         <div class="col-sm menu-lef">
           <ul class="nav">
@@ -93,7 +95,7 @@
           </ul>
         </div>
       </div>
-      <div class="row">
+      <div id="header" class="row">
         <div class="col-sm heading-title">
           <span>FASTER LOADS . CONVERSION TARGETTED</span>
           <h1 class="first-heading">NEW ERA</h1>
@@ -103,6 +105,7 @@
         </div>
         <div class="col-sm heading-image">
           <img
+            id="header-img"
             src="assets/right-heading-image.png"
             class="img-fluid"
             alt="Eufy"
@@ -110,8 +113,7 @@
         </div>
       </div>
     </div>
-    <div
-      class="container-fluid section-background-video">
+    <div id="video" class="container-fluid section-background-video">
       <header>
         <video
           playsinline="playsinline"
@@ -213,8 +215,8 @@
       <div class="row container row-input-email" style="margin: 0 auto; padding: 0">
         <div class="col-sm"><div class="subscribe-wrapper">
           <div class="subscribe-form">
-          <form action="https://feedburner.google.com/fb/a/mailverify?uri=PetaKode" class="subscribe-form" method="post" onsubmit="window.open ('https://feedburner.google.com/fb/a/mailverify?uri=PetaKode', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" target="popupwindow">
-          <input name="uri" type="hidden" value="ArlinaDesign"><input name="loc" type="hidden" value="en_US"><input autocomplete="off" class="subscribe-css-email-field" name="email" placeholder="Enter your Email"><input class="subscribe-css-email-button" title="" type="submit" value="submit"></form>
+          <form id="form" action="#" class="subscribe-form" method="post">
+          <input name="email" type="hidden" value="ArlinaDesign"><input name="email" type="hidden" value="en_US"><input autocomplete="off" class="subscribe-css-email-field" name="email" placeholder="Enter your Email"><input class="subscribe-css-email-button" title="" id="submit" type="submit" value="submit"></form>
           </div>
           </div></div>
       </div>

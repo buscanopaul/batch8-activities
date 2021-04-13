@@ -9,6 +9,46 @@
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { ... } */
+a.nav-link {
+  border-top: 2px solid transparent;
+  transition: 0.4s;
+}
+
+a.nav-link:hover {
+  border-top: 2px solid #4fb2ad;
+}
+.hamburger-test {
+  position: relative;
+  display: block;
+  width: 35px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.hamburger .bar,
+.hamburger:after,
+.hamburger:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0px;
+  transition: 0.4s;
+}
+#overlay {
+  height: 100vh;
+  width: 100vw;
+  background: #ec6451;
+  z-index: 2;
+  visibility: hidden;
+  position: fixed;
+}
+a.hamburger {
+  position: relative;
+  display: block;
+  transition: all 0.2s ease-in-out;
+}
 .bg-overlay .row.container {
   padding: 0 100px !important;
 }
