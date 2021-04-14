@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles.css" />
+   
   </head>
   <body>
     
@@ -25,7 +26,7 @@
             src="assets/menu.svg"
             class="img-fluid"
           /></a>
-          <a class="cta" href="#">
+          <a id="cta" class="cta" href="#">
             <span>PURCHASE</span>
             <span>
               <svg
@@ -70,7 +71,7 @@
         <div class="col-sm menu-lef">
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link active" href="#">FEATURES</a>
+              <a id="active" class="nav-link active" href="#">FEATURES</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">REVIEWS</a>
@@ -100,7 +101,7 @@
           <span>FASTER LOADS . CONVERSION TARGETTED</span>
           <h1 class="first-heading">NEW ERA</h1>
           <h1>EFFICIENT</h1>
-          <h1 class="heading-different"><strong>CLEANING.</strong></h1>
+          <h1 lass="heading-different"><strong id="cleaning">CLEANING.</strong></h1>
           <a href="#">LEARN MORE ABOUT THE PRODUCT</a>
         </div>
         <div class="col-sm heading-image">
@@ -133,7 +134,7 @@
         <div class="col-sm right-eco">
           <span>FROM ANYWHERE OF YOUR ROOM</span>
           <h1 class="title-eco">ECO CAN<br />HEAR YOU!</h1>
-          <ul>
+          <ul id="specs">
             <li>High-Capacity Li-ion Battery</li>
             <li>3-Point Cleaning System</li>
             <li>Anti-scratch tempered glass cover for protection</li>
@@ -226,30 +227,33 @@
         </div>
       </div>
     </div>
-    <div class="container section-footer">
-      <div class="row">
-        <div class="col-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
-        <div class="col footer-menu">
-          <div>COMPANY</div>
-          <ul style="list-style-type:none;">
-            <li>LAYOUT</li>
-            <li>OVERVIEW</li>
-            <li>GRID</li>
-          </ul>
+    <footer>
+      <div class="container section-footer">
+        <div class="row">
+          <div class="col-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+          <div class="col footer-menu">
+            <div>COMPANY</div>
+            <ul style="list-style-type:none;">
+              <li>LAYOUT</li>
+              <li>OVERVIEW</li>
+              <li>GRID</li>
+            </ul>
+          </div>
+          <div class="col footer-menu"><div>IMPORTANT</div>
+            <ul style="list-style-type:none;">
+              <li>ABOUT</li>
+              <li>SERVICE</li>
+              <li>TESTIMONIALS</li>
+            </ul></div>
+          <div class="col footer-menu"><div>CONTACT</div>
+            <ul style="list-style-type:none;">
+              <li>PHONE: +02 3587135</li>
+              <li>EMAIL: BUSCANO.PAUL@GMAIL.COM</li>
+              <li>NY, CUBAO</li>
+            </ul></div>
         </div>
-        <div class="col footer-menu"><div>IMPORTANT</div>
-          <ul style="list-style-type:none;">
-            <li>ABOUT</li>
-            <li>SERVICE</li>
-            <li>TESTIMONIALS</li>
-          </ul></div>
-        <div class="col footer-menu"><div>CONTACT</div>
-          <ul style="list-style-type:none;">
-            <li>PHONE: +02 3587135</li>
-            <li>EMAIL: BUSCANO.PAUL@GMAIL.COM</li>
-            <li>NY, CUBAO</li>
-          </ul></div>
       </div>
-    </div>
+    </footer>
+    <script src="app.js"></script>
   </body>
 </html>
