@@ -489,6 +489,10 @@ span.author {
   -ms-user-select: none;
   user-select: none;
   color: #fff;
+  background-image: url('../images/blank-check-box.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: 10px !important;
+  background-size: 20px !important;
 }
 
 /* Set all odd list items to a different color (zebra-stripes) */
@@ -497,9 +501,9 @@ span.author {
 }
 
 /* Darker background-color on hover */
-.cls-todo ul li:hover {
+/* .cls-todo ul li:hover {
   background: #0b2239;
-}
+} */
 
 /* When clicked on, add a background color and strike out text */
 .cls-todo ul li.checked {
