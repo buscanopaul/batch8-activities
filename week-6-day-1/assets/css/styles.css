@@ -493,11 +493,18 @@ span.author {
   background-repeat: no-repeat !important;
   background-position: 10px !important;
   background-size: 20px !important;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 /* Set all odd list items to a different color (zebra-stripes) */
 .cls-todo ul li:nth-child(odd) {
   background: #0b2239;
+}
+ul#myUL {
+  background: #0b2239;
+  border-radius: 0 0 10px 10px;
+  padding-bottom: 20px;
 }
 
 /* Darker background-color on hover */
