@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    var victorWeight = 60;
+    var victorHeight = 1.7;
+
+    var johnWeight = 50;
+    var johnHeight = 1.5;
+
+    var victorBMI = victorHeight * victorHeight;
+    var johnBMI = johnHeight * johnHeight;
+
+    var victorBMIFinal = victorWeight / victorBMI;
+    var johnBMIFinal = johnWeight / johnBMI;
+
+    var isHigher;
+
+    if (victorBMIFinal > johnBMIFinal) {
+      isHigher = true;
+      console.log("Is Victor’s BMI higher than John’s? " + isHigher);
+    } else {
+      isHigher = false;
+      console.log("Is Victor’s BMI higher than John’s? " + isHigher);
+    }
+  </script>
+</html>

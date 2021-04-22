@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Momentum App</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="main" class="cls-main">
+      <div class="container">
+        <div class="row row-flex">
+          <div class="column column-left">
+            <div class="group">
+              <div class="left-logo">
+                <a href="#"><span>My Momentum App</span></a>
+              </div>
+              <ul class="slideshow">
+                <li><span></span></li>
+                <li><span></span></li>
+                <li><span></span></li>
+              </ul>
+              <h1 id="quote">
+                “Victory is in having done your best. If you’ve done your best,
+                you’ve won.”
+              </h1>
+            </div>
+          </div>
+          <div class="column column-right">
+            <div class="container">
+              <div class="right-temperature">
+                <div class="group">
+                  <div class="column-left">
+                    <img src="assets/images/cloudy-day.svg" class="cloudy" />
+                  </div>
+                  <div class="column-right">
+                    <h2 id="temp">28&#176;</h2>
+                    <p id="city">Manila</p>
+                  </div>
+                </div>
+              </div>
+              <div class="results">
+                <h1 id="time_now">7<font>:</font>10 PM</h1>
+                <h2 id="display_name" class="hide">Good evening, Paul.</h2>
+                <p id="display_focus" class="main-focus hide">
+                  MY MAIN FOCUS TODAY IS
+                </p>
+                <p id="display_focus_value" class="focus-results hide">
+                  BOOTCAMP
+                </p>
+              </div>
+              <form>
+                <fieldset class="yourname enable">
+                  <p id="error_name">Please let us know how to address you.</p>
+                  <span class="hey">Hey, What's your name?</span>
+                  <input
+                    type="text"
+                    class="text-box"
+                    id="yourname"
+                    name="yourname"
+                  />
+                  <input
+                    class="button continue"
+                    id="btn-name"
+                    type="button"
+                    value="Continue"
+                  />
+                </fieldset>
+                <fieldset class="focus">
+                  <p id="error_focus">Ayt! Don't be Lazy!</p>
+                  <input class="text-box" type="text" id="focus" name="focus" />
+                  <input
+                    class="button continue"
+                    id="btn-focus"
+                    type="button"
+                    value="Continue"
+                  />
+                </fieldset>
+              </form>
+              <div id="todo-container" class="cls-todo container red">
+                <div class="row">
+                  <div id="myDIV" class="todo header">
+                    <input type="text" id="myInput" placeholder="New Todo">
+                    <span id="addClick" onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  <ul id="myUL">
+                    <li>Sleep</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

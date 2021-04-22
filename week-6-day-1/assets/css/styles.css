@@ -1,0 +1,549 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #0b2239;
+}
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+}
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  line-height: 40px;
+}
+p {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+}
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
+.green {
+  background-color: green;
+}
+.pink {
+  background-color: pink;
+}
+
+/* header  */
+header .group .column-right {
+  padding-left: 0;
+}
+header .group .column-left {
+  padding-right: 0;
+  padding-top: 8px;
+}
+header .column-right p {
+  margin-top: 0;
+}
+header .column-right h2 {
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+header .column-right .group {
+  display: flex;
+  align-items: flex-start;
+}
+.cloudy {
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+}
+header .column {
+  color: #7a838d;
+}
+header .row-flex {
+  display: flex;
+  align-items: center;
+}
+
+header .column-right {
+  padding-right: 8px;
+}
+header .column {
+  width: 50%;
+  padding: 0px 4vh;
+}
+header .group {
+  float: right;
+}
+
+/* results */
+.results font {
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.results h2 {
+  font-size: 40px;
+  line-height: 30px;
+}
+.main-focus {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.focus-results {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+/* main */
+.continue:hover {
+  background: #0e2f50;
+}
+.continue {
+  position: relative;
+  display: inline-block;
+  border: none;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 30px;
+  min-width: 44px;
+  height: 44px;
+  font-size: 16px;
+  line-height: 44px;
+  transition: 0.25s linear;
+  background: #0b2239;
+  color: #fff;
+  margin-top: 30px;
+}
+.left-logo span {
+  color: #fff;
+  font-weight: 700;
+}
+.step input#name,
+.step input#focus {
+  width: 100%;
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 4px;
+  display: block;
+  background: 0;
+  border: 0;
+  border-bottom: 2px solid #0b2239;
+  color: #0b2239;
+  font-weight: 500;
+  outline: none;
+  text-align: center;
+  transition: border-color 0.2s ease;
+}
+.results {
+  text-align: center;
+}
+.step span {
+  font-size: 30px;
+  line-height: 40px;
+}
+.right-temperature {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+}
+.right-temperature h2 {
+  font-size: 28px;
+  line-height: 28px;
+  padding-top: 10px;
+}
+.right-temperature h2,
+.right-temperature p {
+  margin: 0;
+  line-height: 18px;
+}
+.right-temperature .group {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#main .right-temperature .column-right {
+  display: block;
+}
+.left-logo {
+  text-align: left;
+  position: absolute;
+  top: 15px;
+  left: 30px;
+}
+.hide {
+  display: none;
+}
+#main .results h1 {
+  font-size: 90px;
+  line-height: 100px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.step {
+  padding-top: 30px;
+}
+.step {
+  display: none;
+  text-align: center;
+}
+.step.active {
+  display: block;
+}
+#main .column-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cls-main .row-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cls-main .column {
+  width: 50%;
+  height: 100vh;
+}
+.cls-main .column-left .group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0 30px;
+}
+.cls-main .column-left h1,
+.cls-main .column-left p {
+  color: #fff;
+  text-align: center;
+}
+
+/** SLIDESHOW **/
+.slideshow {
+  list-style-type: none;
+  background-color: #000;
+}
+.slideshow,
+.slideshow:after {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  z-index: -999;
+  margin: 0;
+}
+
+.slideshow li span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 30s linear infinite 0s;
+}
+.slideshow li:nth-child(1) span {
+  background-image: url("../images/one.jpeg");
+}
+.slideshow li:nth-child(2) span {
+  background-image: url("../images/two.jpeg");
+  animation-delay: 6s;
+}
+.slideshow li:nth-child(3) span {
+  background-image: url("../images/three.jpeg");
+  animation-delay: 12s;
+}
+.slideshow li:nth-child(4) span {
+  background-image: url("../images/one.jpeg");
+  animation-delay: 18s;
+}
+.slideshow li:nth-child(5) span {
+  background-image: url("../images/one.jpeg");
+  animation-delay: 24s;
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  8% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  17% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes titleAnimation {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  17% {
+    opacity: 1;
+  }
+  19% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.no-cssanimations .cb-slideshow li span {
+  opacity: 1;
+}
+
+/* new step form style */
+.error {
+  background-color: hsl(16, 100, 47);
+}
+.enable {
+  opacity: 1;
+  display: block !important;
+}
+.disable {
+  opacity: 0;
+  display: none;
+}
+fieldset {
+  opacity: 0;
+  border: none;
+  text-align: center;
+}
+fieldset span {
+  font-size: 40px;
+  line-height: 50px;
+  color: #0b2239;
+}
+fieldset span,
+fieldset input {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+#time_now {
+  display: none;
+}
+fieldset .text-box {
+  width: 100%;
+  padding-top: 4px;
+  display: block;
+  background: 0;
+  border: 0;
+  border-bottom: 2px solid #0b2239;
+  color: #0b2239;
+  font-size: 2.25em;
+  line-height: 1.2;
+  font-weight: 500;
+  outline: none;
+  text-align: center;
+  transition: border-color 0.2s ease;
+  margin-top: 10px;
+}
+fieldset.yourname.enable {
+  margin-top: 200px;
+}
+
+#error_name,
+#error_focus {
+  display: none;
+  width: 300px;
+  background-color: #fff;
+  animation: pulse 1s infinite;
+  text-align: center;
+  margin: 0 auto;
+}
+@keyframes pulse {
+  0% {
+    background-color: #000;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+span.author {
+  font-style: italic;
+  font-size: 18px;
+  line-height: 28px;
+}
+.left-logo a {
+  text-decoration: unset;
+}
+#error_name {
+  margin-bottom: 10px;
+}
+
+/* Style Todo */
+.cls-todo {
+  display: none;
+}
+.addBtn:hover {
+  background-color: #bbb;
+}
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #fff;
+  color: #0b2239;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+  transition: 0.25s linear;
+  border-radius: 3px;
+  margin-left: 15px;
+  margin-top: 7px;
+}
+
+#myInput {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 70%;
+  padding: 10px;
+  float: left;
+  display: block;
+  background: 0;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 500;
+  outline: none;
+  text-align: left;
+  transition: border-color 0.2s ease;
+  margin-top: 10px;
+}
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.header {
+  background-color: #0b2239;
+  padding: 20px 30px;
+  color: white;
+  text-align: center;
+  border-radius: 10px 10px 0px 0px;
+}
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.cls-todo ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+.cls-todo ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #0b2239;
+  font-size: 18px;
+  transition: 0.2s;
+  
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #fff;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+.cls-todo ul li:nth-child(odd) {
+  background: #0b2239;
+}
+
+/* Darker background-color on hover */
+.cls-todo ul li:hover {
+  background: #0b2239;
+}
+
+/* When clicked on, add a background color and strike out text */
+.cls-todo ul li.checked {
+  background: #0b2239;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+.cls-todo ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 15px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+#todo-container {
+  margin-top: 50px;
+  background-color: #fff;
+}
+.cls-todo ul li:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .cls-main .column {
+    width: 100%;
+  }
+  .cls-main .row-flex {
+    display: block;
+  }
+  .slideshow,
+  .slideshow:after {
+    width: 100%;
+  }
+  .right-temperature h2,
+  .right-temperature p {
+    color: #fff;
+  }
+}
+
