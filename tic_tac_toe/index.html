@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Tic Tac Toe</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/styles.css">
+    </head>
+    <body>
+        <div class="filter">
+            <div id="message-board">
+                <h1>
+                    TIC TAC TOE
+                </h1>
+                <div id="winner" class="winner"><img src="assets/images/winner.gif"></div>
+                <div id="draw" class="draw"><img src="assets/images/draw.gif"></div>
+                <h3 id="announcer">
+                    It's X's turn
+                </h3>
+            </div>
+            <div id="board">
+                <div class="cell" data-row="0" data-column="0"></div>
+                <div class="cell" data-row="0" data-column="1"></div>
+                <div class="cell" data-row="0" data-column="2"></div>
+                <div class="cell" data-row="1" data-column="0"></div>
+                <div class="cell" data-row="1" data-column="1"></div>
+                <div class="cell" data-row="1" data-column="2"></div>
+                <div class="cell" data-row="2" data-column="0"></div>
+                <div class="cell" data-row="2" data-column="1"></div>
+                <div class="cell" data-row="2" data-column="2"></div>
+            </div>
+            <div id="button-group">
+                <button class="move-button" id="previous" onclick="previousMove()">
+                    &#10094;&#10094;&#10094;
+                </button>
+                <button id="reset" onclick="resetBoard()">Reset</button>
+                <button class="move-button" id="next" onclick="nextMove()">
+                    &#10095;&#10095;&#10095;
+                </button>
+            </div>
+        </div>
+        <script src="assets/app.js" async defer></script>
+    </body>
+</html>

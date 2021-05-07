@@ -1,0 +1,221 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: Pwchalk-LyxG;
+    src: url("fonts/Pwchalk-LyxG.ttf");
+}
+
+@font-face {
+    font-family: BarlowCondensed;
+    src: url("fonts/BarlowCondensed-Medium.ttf");
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("images/bg-tic.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.filter {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.1);
+}
+
+:root {
+    --cell-size: 10vw;
+    --mark-size: calc(var(--cell-size)*0.9);
+    
+}
+
+/*--- Tic-Tac-Toe Board ---*/
+#board {
+    width: 90vw;
+    height: 90vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3, auto);
+    /* background-color: darkgreen;
+    border: rgb(195,128,21) solid 1vw; */
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: solid white .2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Removes borders of board */
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+.cell:nth-child(3n + 1) {
+    border-left: none;
+}
+.cell:nth-child(3n + 3) {
+    border-right: none;
+}
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+    border-bottom: none;
+}
+
+/* X's */
+.cell.x {
+    background-image: url('images/bg-x.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-color: white;
+}
+
+/* O's */
+.cell.o {
+    background-image: url('images/bg-o.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-color: white;
+}
+
+/* Mark Hover */
+.cell.x,
+.cell.o {
+    cursor: not-allowed;
+}
+
+/* Hovering when X's Turn */
+#board.x .cell:not(.x):not(.o):hover {
+    background-image: url('images/bg-x.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+
+/* Hovering when O's Turn */
+#board.o .cell:not(.x):not(.o):hover {
+    background-image: url('images/bg-o.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+/*--- Buttons ---*/
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5vw;
+    width: 10vw;
+    font-size: 2vw;
+}
+
+#button-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    bottom: 0;
+    width: 60vw;
+    height: 20vh;
+    /* background-color: rgba(0,0,0,0.5); */
+}
+.move-button {
+    display: none;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: white;
+    font-size: 3vw;
+    font-family: 'BarlowCondensed';
+}
+
+.move-button:hover {
+    filter:drop-shadow(.1vw .1vw 1vw #ccc);
+    font-size: 4vw;
+}
+
+#reset {
+    display: flex;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: black;
+    font-size: 3vw;
+    background-image: url(https://nulifemarket.com/wp-content/uploads/2018/08/bowl_smartfry-flour.png);
+    background-position: 34px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 100px;
+    font-family: 'BarlowCondensed';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#reset:hover {
+    font-size: 4vw;
+    filter:drop-shadow(.1vw .1vw 1vw #ccc);
+}
+
+/*--- Message Board ---*/
+#message-board {
+    width: 60vw;
+    height: 20vh;
+    color: white;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgba(0,0,0,0.5); */
+}
+
+#message-board h1{
+    font-size: 5vw;
+    line-height: 0.5vh;
+    color: white;
+    font-family: 'Pwchalk-LyxG';
+}
+
+#message-board h3{
+    font-size: 2vw;
+    line-height: 0.8vw;
+    font-family: 'BarlowCondensed';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* winnder gif style */
+.winner, .draw {
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+
+.winner img, .draw img {
+    position: absolute;
+    top: 0;
+    width: 200px;
+}
