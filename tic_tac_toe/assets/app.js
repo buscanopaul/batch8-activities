@@ -27,8 +27,9 @@ let movesCounter = 0;
 
 let turn;
 
+// first trigger 
 function reply_click(clicked_id) {
-    if(clicked_id === 'btnY') {
+    if(clicked_id === 'btnO') {
         turn = true;
         startGame(turn);
         modalContainer.style.display = "none";
@@ -39,11 +40,8 @@ function reply_click(clicked_id) {
     }
 }
 
-//Starts the game
-// startGame();
 
 function startGame(turn) {
-    // const random_boolean = Math.random() < 0.5;
     circleTurn = turn;
     setBoardClass();
 }

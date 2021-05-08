@@ -206,7 +206,7 @@ button {
     border: none;
     color: black;
     font-size: 3vw;
-    background-image: url(https://nulifemarket.com/wp-content/uploads/2018/08/bowl_smartfry-flour.png);
+    background-image: url('images/bowl_smartfry-flour.png');
     background-position: 34px;
     background-size: contain;
     background-repeat: no-repeat;
