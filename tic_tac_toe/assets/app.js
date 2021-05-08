@@ -4,6 +4,7 @@ const oMessage = "It's O's turn";
 const drawMessage = "It's a draw!";
 const winMessage = " is the winner!";
 let announcer = document.getElementById("announcer");
+const modalContainer = document.getElementById("modalChoice");
 
 //Global Variables
 const xClass = 'x';
@@ -24,12 +25,26 @@ let boardState = [
 let moves = [];
 let movesCounter = 0;
 
-//Starts the game
-startGame();
+let turn;
 
-function startGame() {
-    const random_boolean = Math.random() < 0.5;
-    circleTurn = random_boolean;
+function reply_click(clicked_id) {
+    if(clicked_id === 'btnY') {
+        turn = true;
+        startGame(turn);
+        modalContainer.style.display = "none";
+    } else {
+        turn = false;
+        startGame(turn);
+        modalContainer.style.display = "none";
+    }
+}
+
+//Starts the game
+// startGame();
+
+function startGame(turn) {
+    // const random_boolean = Math.random() < 0.5;
+    circleTurn = turn;
     setBoardClass();
 }
 
@@ -219,8 +234,8 @@ function resetBoard() {
     nextButton.style.display = "none";
     winnerGif.style.display = "none";
     drawGif.style.display = "none";
-    
-    startGame();
+    modalContainer.style.display = "flex";
+    // startGame();
 }
 
 function previousMove() {

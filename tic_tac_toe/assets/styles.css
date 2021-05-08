@@ -22,6 +22,46 @@ body {
     background-repeat: no-repeat;
 }
 
+.choose-player {
+    font-size: 5vw;
+    line-height: 0.5vh;
+    color: white;
+    font-family: 'Pwchalk-LyxG';
+}
+
+.modal {
+    background-color: rgb(0 0 0 / 90%);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+  
+.box .buttons-modal {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-left {
+    margin: 10px;
+    font-family: 'BarlowCondensed';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: white;
+    border: 1px solid black;
+}
+
 .filter {
     width: 100vw;
     height: 100vh;
@@ -150,6 +190,7 @@ button {
     color: white;
     font-size: 3vw;
     font-family: 'BarlowCondensed';
+    transition: ease-in 0.1s;
 }
 
 .move-button:hover {
@@ -173,6 +214,7 @@ button {
     font-family: 'BarlowCondensed';
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: ease-in 0.1s;
 }
 
 #reset:hover {
