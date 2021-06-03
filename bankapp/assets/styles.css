@@ -1,0 +1,756 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  color: white;
+  font-size: 15px;
+  line-height: 25px;
+  font-family: Product-Sans-Regular;
+}
+
+@font-face {
+  font-family: Product-Sans-Bold;
+  src: url("fonts/Product-Sans-Bold.ttf");
+}
+
+@font-face {
+  font-family: Product-Sans-Regular;
+  src: url("fonts/Product-Sans-Regular.ttf");
+}
+
+.container {
+  max-width: 1700px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#login {
+  height: 100%;
+  min-height: 100vh;
+  background-image: url("images/bg-login.jpg");
+  background-position: left;
+  background-size: cover;
+  display: block;
+}
+
+#login .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#login .col {
+  width: 50%;
+}
+
+#login .col-right {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#loginForm {
+  background-color: black;
+  width: 70%;
+  border-radius: 20px;
+  text-align: center;
+  padding: 100px 0;
+  display: block;
+}
+
+.input-password {
+  margin-bottom: 20px;
+}
+
+.img-logo {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.border-image {
+  width: 70%;
+  height: 1px;
+  border-top: 1px solid #6b6b6b;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+p#errorUsername,
+#errorPassword {
+  color: #e82110;
+  font-family: Product-Sans-Regular;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+#errorMessage {
+  display: none;
+}
+
+.input-username p,
+.input-password p {
+  display: none;
+}
+
+input#username,
+input#password {
+  margin-bottom: 15px;
+  padding: 8px;
+  border: 2px solid white;
+  font-family: Product-Sans-Regular;
+  background-color: black;
+  border-radius: 10px;
+  width: 70%;
+  text-align: center;
+  color: white;
+  outline: none;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+#btnLogin {
+  font-size: 20px;
+  line-height: 30px;
+  font-family: Product-Sans-Regular;
+  background-color: blue;
+  padding: 10px 140px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0px 15px 20px rgb(32 1 255 / 40%);
+}
+
+#showPassword {
+  position: absolute;
+  right: 235px;
+  top: 390px;
+  color: black;
+}
+
+/* Styles for sign up form */
+#showPasswordSignUp {
+  position: absolute;
+  right: 235px;
+  top: 420px;
+  color: white;
+}
+#showPasswordConfirm {
+  position: absolute;
+  right: 235px;
+  top: 480px;
+  color: white;
+}
+
+#signUpForm {
+  background-color: black;
+  width: 70%;
+  border-radius: 20px;
+  text-align: center;
+  padding: 100px 0;
+  display: none;
+}
+
+#signupEmail,
+#signupFirstName,
+#signupLastName,
+#signupPassword,
+#confirmPassword {
+  margin-bottom: 15px;
+  padding: 8px;
+  border: 2px solid white;
+  font-family: Product-Sans-Regular;
+  background-color: black;
+  border-radius: 10px;
+  width: 70%;
+  text-align: center;
+  color: white;
+  outline: none;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+#signupErrorPassword,
+#confirmErrorPassword {
+  display: none;
+}
+
+#errorEmail,
+#errorFirstName,
+#errorLastName,
+#signupErrorPassword,
+#confirmErrorPassword {
+  color: #e82110;
+  font-family: Product-Sans-Regular;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+#btnSignUp {
+  font-size: 20px;
+  line-height: 30px;
+  font-family: Product-Sans-Regular;
+  background-color: blue;
+  padding: 10px 133px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0px 15px 20px rgb(32 1 255 / 40%);
+}
+
+.confirm-input-password {
+  margin-bottom: 20px;
+}
+
+.text-bottom {
+  padding-top: 10px;
+  color: white;
+}
+
+.text-bottom a {
+  color: white;
+}
+
+.dashboard-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.col-welcome p {
+  font-size: 50px;
+  line-height: 60px;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.col-welcome h6 {
+  font-size: 20px;
+  line-height: 30px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.bank-card {
+  width: 100%;
+  height: 180px;
+  background-color: blue;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.bank-card .row-valid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bank-card .banking-app {
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.bank-card .card-number {
+  font-size: 20px;
+}
+
+.row-valid {
+  padding-top: 20px;
+}
+
+.row-valid .valid-text {
+  margin: 0;
+  opacity: 0.5;
+  font-size: 13px;
+}
+
+.row-valid .valid-date {
+  margin: 0;
+  font-size: 13px;
+}
+
+img.img-mastercard {
+  width: 50px;
+  height: auto;
+}
+
+.row-loans {
+  display: flex;
+  padding-top: 50px;
+}
+
+.row-loans .col-loans {
+  width: 50%;
+  position: relative;
+  margin-right: 20px;
+}
+
+.row-loans .col-book {
+  width: 50%;
+}
+
+.row-loans .card-loan {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 15px;
+  position: relative;
+}
+
+#balance p {
+  font-size: 40px;
+  line-height: 50px;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+#balance p font {
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.row-book {
+  padding-top: 30px;
+}
+
+.card-loan p {
+  color: blue;
+  font-family: Product-Sans-Bold;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.card-loan span {
+  color: black;
+  font-size: 13px;
+}
+.card-loan a {
+  color: gray;
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.card-loan .img-loan {
+  position: absolute;
+  width: auto;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+
+a.link-loan {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  z-index: 99999;
+}
+
+#dashboard {
+  height: 100%;
+  min-height: 100vh;
+  background-color: black;
+  display: none;
+}
+
+#dashboard .container {
+  max-width: 100%;
+  padding-left: 0px;
+  padding-right: 20px;
+}
+
+#dashboard .navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  transition: 0.5s;
+  overflow: hidden;
+  background-color: #161616;
+  padding-left: 20px;
+}
+
+#dashboard .navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#dashboard .navigation ul li {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+#dashboard .navigation ul li:hover {
+  background-color: blue;
+}
+
+#dashboard .navigation ul li:nth-child(1) {
+  border-bottom: 1px solid #6b6b6b;
+}
+
+#dashboard .navigation ul li:nth-child(1):hover {
+  background-color: transparent;
+}
+
+#dashboard .navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+}
+
+#dashboard .main {
+  position: absolute;
+  left: 300px;
+  height: 100vh;
+  width: 82%;
+}
+
+#dashboard .row-page-header {
+  position: relative;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0px 40px;
+  justify-content: space-between;
+}
+
+#dashboard .row.row-body-dashboard {
+  display: flex;
+  margin: 0 20px;
+  height: 90vh;
+  width: 95%;
+  background-color: #161616;
+  padding-left: 0;
+  border-radius: 20px;
+  padding: 20px;
+  display: none;
+}
+
+#dashboard #bodyDashboard {
+  display: flex;
+  max-width: 70% !important;
+  flex-direction: column;
+}
+
+#dashboard #bodyDashboard-side {
+  display: flex !important;
+  max-width: 30% !important;
+  margin-left: 0;
+  flex-direction: column !important;
+}
+
+.other {
+  padding-top: 40px;
+}
+
+.list-options .arrow-right {
+  width: 15px;
+  height: auto;
+  float: right;
+}
+.list-options {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  background-color: #112953;
+  border-radius: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 10px;
+}
+
+#balance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#balance span {
+  margin-right: 5px;
+}
+
+.list-options p {
+  width: 100%;
+}
+
+#userList,
+#transactionList,
+#transactionListUser {
+  width: 100%;
+}
+
+#customers,
+#transactions,
+#transactionsUser {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#customers td,
+#customers th,
+#transactions td,
+#transactions th,
+#transactionsUser td,
+#transactionsUser th {
+  padding: 8px;
+}
+
+#customers th,
+#transactions th,
+#transactionsUser th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  color: white;
+  border-bottom: 1px solid #6b6b6b;
+}
+
+#customers .title-balance,
+#transactions .title-balance,
+#transactionsUser .title-balance {
+  text-align: center;
+}
+
+#customers .balance,
+#transactions .balance,
+#transactionsUser .balance {
+  text-align: center;
+}
+
+#customers tr:hover,
+#transactions tr:hover,
+#transactionsUser tr:hover {
+  background-color: blue;
+}
+
+table#transactionsUser tbody td:nth-child(2),
+table#transactionsUser tbody td:nth-child(3),
+table#transactionsUser tbody td:nth-child(5),
+table#transactionsUser tbody td:nth-child(6),
+table#transactionsUser tbody td:nth-child(7),
+table#transactionsUser tbody td:nth-child(8) {
+  text-align: center;
+}
+
+#customers .user-header:hover,
+#transactions .user-header:hover,
+#transactionsUser .user-header:hover {
+  background-color: transparent;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.button-add-user {
+  margin-top: 50px;
+}
+
+#btnAddUser {
+  font-size: 20px;
+  line-height: 30px;
+  font-family: Product-Sans-Regular;
+  background-color: blue;
+  padding: 10px 50px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+}
+
+#addUser {
+  display: none;
+}
+
+#addUser input {
+  display: block;
+}
+
+.back-user {
+  margin-bottom: 20px;
+}
+
+.back-user a {
+  color: white;
+  text-decoration: none;
+}
+
+.back-user i {
+  margin-right: 10px;
+}
+
+#addUser .group {
+  margin-bottom: 30px;
+}
+
+#addUser .group label {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+#addUser .group input,
+#customerAccountType {
+  margin-bottom: 15px;
+  padding: 8px;
+  border: 2px solid white;
+  font-family: Product-Sans-Regular;
+  background-color: black;
+  border-radius: 10px;
+  width: 100%;
+  text-align: left;
+  color: white;
+  outline: none;
+  font-size: 15px;
+  line-height: 25px;
+  margin-top: 10px;
+}
+
+.grouptype {
+  display: flex;
+  align-items: center;
+}
+
+.group-accountype {
+  margin-left: 20px;
+  text-align: center;
+}
+
+#customerAccountType {
+  padding: 10px;
+}
+
+#btnCreateCustomer {
+  font-size: 20px;
+  line-height: 30px;
+  font-family: Product-Sans-Regular;
+  background-color: blue;
+  padding: 10px 50px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+#accountNumber {
+  background-color: gray !important;
+}
+
+#deposit input,
+#withdraw input,
+#send input,
+#send textarea,
+#budget input {
+  display: block;
+  margin-bottom: 15px;
+  padding: 8px 20px;
+  border: 2px solid white;
+  font-family: Product-Sans-Regular;
+  background-color: black;
+  border-radius: 10px;
+  width: 300px;
+  text-align: left;
+  color: white;
+  outline: none;
+  font-size: 15px;
+  line-height: 25px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+#deposit .group,
+#withdraw .group,
+#send .group,
+#budget .group {
+  margin-bottom: 30px;
+}
+
+#deposit .group label,
+#withdraw .group label,
+#send .group label,
+#budget .group label {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+#btnDepositCustomer,
+#btnWithdrawCustomer,
+#btnSendMoney,
+#btnBudgetSubmit {
+  font-size: 20px;
+  line-height: 30px;
+  font-family: Product-Sans-Regular;
+  background-color: blue;
+  padding: 10px 50px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+#bodySend {
+  display: none;
+}
+
+#bodyBudget {
+  flex-direction: row;
+}
+
+#errorsendAccountNumber,
+#errorsendAccountName,
+#errorsendAmount {
+  display: none;
+  color: red;
+}
+
+.logo-menu {
+  height: 30px;
+  margin-right: 15px;
+  margin-top: 5px;
+}
+
+#dashboardLogo {
+  justify-content: center;
+}
+
+.mystyle {
+  background-color: blue;
+}
+
+#budget {
+  width: 50%;
+}
+
+#budgetListUser {
+  width: 50%;
+}

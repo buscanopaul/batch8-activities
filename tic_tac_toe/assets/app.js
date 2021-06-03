@@ -24,7 +24,6 @@ let boardState = [
 //Moves storage
 let moves = [];
 let movesCounter = 0;
-
 let turn;
 
 // first trigger 
@@ -39,7 +38,6 @@ function reply_click(clicked_id) {
         modalContainer.style.display = "none";
     }
 }
-
 
 function startGame(turn) {
     circleTurn = turn;
@@ -75,135 +73,137 @@ function clickHandler() {
 }
 
 
-
 //FUNCTIONS FOR CLICK HANDLER
 
-    //Add either o or x class
-    function placeMark(cell, currentClass) {
-        cell.classList.add(currentClass);
-    }
+//Add either o or x class
+function placeMark(cell, currentClass) {
+    cell.classList.add(currentClass);
+}
 
-    //Switches the turn
-    function switchTurn() {
-        circleTurn = !circleTurn;
-    }
+//Switches the turn
+function switchTurn() {
+    circleTurn = !circleTurn;
+}
 
-    //Changes the class of the board to either o or x depending on circleTurn
-    function setBoardClass() {
-        board.classList.remove(xClass, oClass);
-        if (gameFinished === false) {
-            if (circleTurn) {
-                board.classList.add(oClass);
-                announcer.innerHTML = oMessage;
-            }
-            else {
-                board.classList.add(xClass);
-                announcer.innerHTML = xMessage;
-            }
-        }
-
-    }
-
-    //Updates the Board State
-    function updateBoard(cell, currentClass) {
-        const row = cell.dataset.row;
-        const column = cell.dataset.column;
-        boardState[row][column] = currentClass;
-    }
-
-    //Saves the Boardstate Every Turn    !UNFINISHED
-    function logMove(cell, currentClass) {
-        moves[movesCounter] = 
-            [(movesCounter),
-            (currentClass),
-            (cell.dataset.row),
-            (cell.dataset.column)
-            ];
-        console.log(`Turn ${moves[movesCounter][0] + 1}: ${moves[movesCounter][1].toUpperCase()} marked row ${Number((moves[movesCounter][2])) + 1}, column ${Number(moves[movesCounter][3]) + 1}`);
-        movesCounter ++;
-
-    }
-
-    //Check the Board for Winner 
-    function checkWinner(currentClass) {
-        let winner = currentClass.toUpperCase();
-
-        //Horizontal Win 
-        for (let row=0; row<boardState.length; row++) {
-            let a = boardState[row][0];
-            let b = boardState[row][1];
-            let c = boardState[row][2];
-            if(a && a===b && b===c && gameFinished === false) {
-                console.log(winner + " " + "is the winner! (Row)")
-                hasWinner();
-                break;
-            }
-        }
-
-        //Vertical Win
-        for (let column=0; column<boardState.length; column++) {
-            let a = boardState[0][column];
-            let b = boardState[1][column];
-            let c = boardState[2][column];
-            if(a && a===b && b===c && gameFinished === false) {
-                console.log(winner + " " + "is the winner! (Column)");
-                hasWinner();
-                break
-            }
-        }
-
-        //Diagonal Win (Left)
-        if (gameFinished === false) {
-            let a = boardState[0][0];
-            let b = boardState[1][1];
-            let c = boardState[2][2];
-            if(a && a===b && b===c) {
-                console.log(winner + " " + "is the winner! (Diagonal Left)");
-                hasWinner();
-            }
-        }
-        //Diagonal Win (Right)
-        if (gameFinished === false) {
-            let a = boardState[0][2];
-            let b = boardState[1][1];
-            let c = boardState[2][0];
-            if(a && a===b && b===c) {
-                console.log(winner + " " + "is the winner! (Diagonal Right)");
-                hasWinner();
-            }
-        }
-
-        function hasWinner() {
-            gameFinished = true;
-            announcer.innerHTML = winner + winMessage;
-            previousButton.style.display = "flex";
-            nextButton.style.display = "flex";
-            nextButton.style.visibility = "hidden";
-            winnerGif.style.display = "flex";
-
-        }
-
-        // Draw
-        for (let row=0; row<boardState.length; row++) {
-            for (let column=0; column<boardState.length; column++) {
-                if(boardState[row][column] !== empty) {
-                    occupiedCells += 1;
-                }
-            }
-        }
-        if (occupiedCells === 9 && gameFinished === false) {
-            gameFinished = true;
-            announcer.innerHTML = drawMessage;
-            previousButton.style.display = "flex";
-            nextButton.style.display = "flex";
-            nextButton.style.visibility = "hidden";
-            drawGif.style.display = "flex";
-            console.log("It's a draw");
+//Changes the class of the board to either o or x depending on circleTurn
+function setBoardClass() {
+    board.classList.remove(xClass, oClass);
+    if (gameFinished === false) {
+        if (circleTurn) {
+            board.classList.add(oClass);
+            announcer.innerHTML = oMessage;
         }
         else {
-            occupiedCells = 0;
+            board.classList.add(xClass);
+            announcer.innerHTML = xMessage;
         }
     }
+
+}
+
+
+
+//Updates the Board State
+function updateBoard(cell, currentClass) {
+    const row = cell.dataset.row;
+    const column = cell.dataset.column;
+    boardState[row][column] = currentClass;
+
+}
+
+//Saves the Boardstate Every Turn 
+function logMove(cell, currentClass) {
+    moves[movesCounter] = 
+        [(movesCounter),
+        (currentClass),
+        (cell.dataset.row),
+        (cell.dataset.column)
+        ];
+    console.log(`Turn ${moves[movesCounter][0] + 1}: ${moves[movesCounter][1].toUpperCase()} marked row ${Number((moves[movesCounter][2])) + 1}, column ${Number(moves[movesCounter][3]) + 1}`);
+    movesCounter ++;
+
+}
+
+//Check the Board for Winner 
+function checkWinner(currentClass) {
+    let winner = currentClass.toUpperCase();
+
+    //Horizontal Win 
+    for (let row=0; row<boardState.length; row++) {
+        let a = boardState[row][0];
+        let b = boardState[row][1];
+        let c = boardState[row][2];
+        if(a && a===b && b===c && gameFinished === false) {
+            console.log(winner + " " + "is the winner! (Row)")
+            hasWinner();
+            break;
+        }
+    }
+
+    //Vertical Win
+    for (let column=0; column<boardState.length; column++) {
+        let a = boardState[0][column];
+        let b = boardState[1][column];
+        let c = boardState[2][column];
+        if(a && a===b && b===c && gameFinished === false) {
+            console.log(winner + " " + "is the winner! (Column)");
+            hasWinner();
+            break
+        }
+    }
+
+    //Diagonal Win (Left)
+    if (gameFinished === false) {
+        let a = boardState[0][0];
+        let b = boardState[1][1];
+        let c = boardState[2][2];
+        if(a && a===b && b===c) {
+            console.log(winner + " " + "is the winner! (Diagonal Left)");
+            hasWinner();
+        }
+    }
+    //Diagonal Win (Right)
+    if (gameFinished === false) {
+        let a = boardState[0][2];
+        let b = boardState[1][1];
+        let c = boardState[2][0];
+        if(a && a===b && b===c) {
+            console.log(winner + " " + "is the winner! (Diagonal Right)");
+            hasWinner();
+        }
+    }
+
+    function hasWinner() {
+        gameFinished = true;
+        announcer.innerHTML = winner + winMessage;
+        previousButton.style.display = "flex";
+        nextButton.style.display = "flex";
+        nextButton.style.visibility = "hidden";
+        winnerGif.style.display = "flex";
+
+    }
+
+    // Draw
+    for (let row=0; row<boardState.length; row++) {
+        for (let column=0; column<boardState.length; column++) {
+            if(boardState[row][column] !== empty) {
+                occupiedCells += 1;
+            }
+        }
+    }
+    if (occupiedCells === 9 && gameFinished === false) {
+        gameFinished = true;
+        announcer.innerHTML = drawMessage;
+        previousButton.style.display = "flex";
+        nextButton.style.display = "flex";
+        nextButton.style.visibility = "hidden";
+        drawGif.style.display = "flex";
+        console.log("It's a draw");
+    }
+    else {
+        occupiedCells = 0;
+    }
+}
 
 // FUNCTIONS FOR BUTTONS
 const previousButton = document.getElementById("previous");

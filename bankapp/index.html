@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank App</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://static.fontawesome.com/css/fontawesome-app.css"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <section id="login">
+      <div class="container">
+        <div class="row">
+          <div class="col col-left"></div>
+          <div class="col col-right">
+            <form id="loginForm">
+              <img src="assets/images/logo-banking.png" class="img-logo" />
+              <div class="border-image"></div>
+              <div class="input-username">
+                <p id="errorUsername">Please enter your Email</p>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="Enter Email"
+                  onkeypress="removeError()"
+                />
+              </div>
+              <div class="input-password">
+                <p id="errorPassword">Please center your Password</p>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Enter Password"
+                  autocomplete="on"
+                  onkeypress="removeError()"
+                />
+                <i
+                  class="fas fa-eye"
+                  id="showPassword"
+                  onclick="showPasswordLogin()"
+                ></i>
+              </div>
+              <div class="button-login">
+                <a id="btnLogin" href="#">Login</a>
+              </div>
+              <div class="text-bottom">
+                <p>
+                  Don't have an account? <a id="btnGotoSignup" href="#"
+                    >Sign up</a
+                  >
+                </p>
+              </div>
+            </form>
+
+            <form id="signUpForm">
+              <img src="assets/images/logo-banking.png" class="img-logo" />
+              <div class="border-image"></div>
+              <div class="input-username">
+                <p id="errorEmail">Please enter your Email</p>
+                <input
+                  type="email"
+                  id="signupEmail"
+                  name="signupEmail"
+                  placeholder="Enter your email"
+                  onkeypress="removeError()"
+                />
+              </div>
+              <div class="input-username">
+                <p id="errorFirstName">Please enter your First Name</p>
+                <input
+                  type="text"
+                  id="signupFirstName"
+                  name="signupFirstName"
+                  placeholder="Enter first name"
+                  onkeypress="removeError()"
+                />
+              </div>
+              <div class="input-username">
+                <p id="errorLastName">Please enter your Last Name</p>
+                <input
+                  type="text"
+                  id="signupLastName"
+                  name="signupLastName"
+                  placeholder="Enter last name"
+                  onkeypress="removeError()"
+                />
+              </div>
+              <div class="signup-input-password">
+                <p id="signupErrorPassword">Please enter your Password</p>
+                <input
+                  type="password"
+                  id="signupPassword"
+                  name="signupPassword"
+                  placeholder="Enter password"
+                  autocomplete="off"
+                  onkeypress="removeError()"
+                />
+                <i
+                  class="fas fa-eye"
+                  id="showPasswordSignUp"
+                  onclick="showPasswordSignup()"
+                ></i>
+              </div>
+              <div class="confirm-input-password">
+                <p id="confirmErrorPassword">Password not match</p>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  placeholder="Confirm Password"
+                  autocomplete="off"
+                  onkeypress="removeError()"
+                />
+                <i
+                  class="fas fa-eye"
+                  id="showPasswordConfirm"
+                  onclick="showPasswordConfirm()"
+                ></i>
+              </div>
+              <div class="button-signup">
+                <a id="btnSignUp" href="#">Sign up</a>
+              </div>
+              <div class="text-bottom">
+                <p>
+                  Already signed up? <a id="btnGotoLogin" href="#"
+                    >Go to login</a
+                  >
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="dashboard">
+      <div class="container">
+        <div class="navigation">
+          <ul>
+            <li>
+              <a href="#" id="dashboardLogo">
+                <span class="icon"></span>
+                <span class="title"><h2>The Banking App</h2></span>
+              </a>
+            </li>
+            <li id="listDashboard" onclick="showDashboard()" class="menu-list">
+              <a id="btnDashboard" href="#">
+                <span class="icon"
+                  ><img
+                    src="assets/images/logo-menu-dashboard.png"
+                    alt="dashboard"
+                    class="logo-menu"
+                /></span>
+                <span class="title"><h2>Dashboard</h2></span>
+              </a>
+            </li>
+            <li id="listSend" onclick="showSend()" class="menu-list">
+              <a id="btnSend" href="#">
+                <span class="icon"
+                  ><img
+                    src="assets/images/logo-menu-send.png"
+                    alt="dashboard"
+                    class="logo-menu"
+                /></span>
+                <span class="title"><h2>Send</h2></span>
+              </a>
+            </li>
+            <li id="listRequest" class="menu-list">
+              <a id="btnRequest" href="#">
+                <span class="icon"
+                  ><img
+                    src="assets/images/logo-menu-request.png"
+                    alt="dashboard"
+                    class="logo-menu"
+                /></span>
+                <span class="title"><h2>Request</h2></span>
+              </a>
+            </li>
+            <li id="listBudget" onclick="showBudget()" class="menu-list">
+              <a id="btnBudget" href="#">
+                <span class="icon"
+                  ><img
+                    src="assets/images/logo-menu-send.png"
+                    alt="dashboard"
+                    class="logo-menu"
+                /></span>
+                <span class="title"><h2>Budget Tracker</h2></span>
+              </a>
+            </li>
+            <li
+              id="listTransactionHistory"
+              onclick="showTransactionHistory()"
+              class="menu-list"
+            >
+              <a id="btnTransactionHistory" href="#">
+                <span class="icon"
+                  ><img
+                    src="assets/images/logo-menu-history.png"
+                    alt="dashboard"
+                    class="logo-menu"
+                /></span>
+                <span class="title"><h2>Transaction History</h2></span>
+              </a>
+            </li>
+            <li id="listProfile" class="menu-list">
+              <a id="btnProfle" href="#">
+                <span class="icon"
+                  ><img
+                    src="assets/images/logo-menu-profile.png"
+                    alt="dashboard"
+                    class="logo-menu"
+                /></span>
+                <span class="title"><h2>Profile</h2></span>
+              </a>
+            </li>
+            <li id="listDeposit" onclick="showDeposit()" class="menu-list">
+              <a id="btnDeposit" href="#">
+                <span class="icon"></span>
+                <span class="title"><h2>Deposit</h2></span>
+              </a>
+            </li>
+            <li id="listWithdraw" class="menu-list">
+              <a id="btnWithdraw" href="#">
+                <span class="icon"></span>
+                <span class="title"><h2>Withdraw</h2></span>
+              </a>
+            </li>
+            <li id="listHistory" class="menu-list">
+              <a id="btnHistory" href="#">
+                <span class="icon"></span>
+                <span class="title"><h2>History</h2></span>
+              </a>
+            </li>
+            <li id="listUsers" class="menu-list">
+              <a id="btnUsers" href="#">
+                <span class="icon"></span>
+                <span class="title"><h2>Users</h2></span>
+              </a>
+            </li>
+            <li class="menu-list" onClick="window.location.reload();">
+              <a id="btnLogout" href="#">
+                <span class="icon"
+                  ><img
+                    src="assets/images/logo-menu-logout.png"
+                    alt="dashboard"
+                    class="logo-menu"
+                /></span>
+                <span class="title"><h2>Logout</h2></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="main">
+          <div class="container">
+            <div class="row row-page-header">
+              <p id="breadcrumbs">Home</p>
+              <p>Hello, <font id="currentName">adminadmin</font></p>
+            </div>
+            <div class="dashboard-group">
+              <div id="bodyDashboard" class="row row-body row-body-dashboard">
+                <div class="row-welcome">
+                  <div class="col-welcome">
+                    <p>Welcome to<br />the <strong>The Banking App</strong></p>
+                    <h6>Transfer Money</h6>
+                    <span
+                      >Simplifies and speeds up<br />processing international
+                      payments...</span
+                    >
+                  </div>
+                </div>
+                <div class="row-loans">
+                  <div class="col-loans">
+                    <a href="#" class="link-loan"></a>
+                    <div class="card-loan">
+                      <p>Apply for loan</p>
+                      <span
+                        >Check here to see how much<br />
+                        you can qualify for!</span
+                      >
+                      <a href="#">Tap to check</a>
+                      <img
+                        src="assets/images/img-loan.png"
+                        alt="loan"
+                        class="img-loan"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-book">
+                    <a href="#" class="link-loan"></a>
+                    <div class="card-loan">
+                      <p>Welcome to PlayEveryday</p>
+                      <span
+                        >Collect Play Points, Rise up the<br />
+                        ranks and make it.</span
+                      >
+                      <a href="#">Tap to setup your profile</a>
+                      <img
+                        src="assets/images/img-playeveryday.png"
+                        alt="loan"
+                        class="img-loan"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row-loans row-book">
+                  <div class="col-loans">
+                    <a href="#" class="link-loan"></a>
+                    <div class="card-loan">
+                      <p>Start Saving Now</p>
+                      <span
+                        >Save up for a vacation, a car or<br />for anything
+                        else.</span
+                      >
+                      <a href="#">Tap to set goal</a>
+                      <img
+                        src="assets/images/img-start-saving.png"
+                        alt="loan"
+                        class="img-loan"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-book">
+                    <a href="#" class="link-loan"></a>
+                    <div class="card-loan">
+                      <p>Booking Visit</p>
+                      <span>Schedule your branch visit<br />in advance/</span>
+                      <a href="#">Tap to start</a>
+                      <img
+                        src="assets/images/img-book.png"
+                        alt="loan"
+                        class="img-loan"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="bodyDashboardSide"
+                class="row row-body row-body-dashboard"
+              >
+                <div id="balance">
+                  <span>&#8369;</span>
+                  <p id="currentBalance">2,500</p>
+                </div>
+                <div class="bank-card">
+                  <p class="banking-app">The Banking App</p>
+                  <p id="cardNum" class="card-number">5435 5436 **** 6643</p>
+                  <div class="row-valid">
+                    <div class="valid-thru">
+                      <p class="valid-text">VALID THRU</p>
+                      <p class="valid-date">08/24</p>
+                    </div>
+                    <div class="master">
+                      <img
+                        src="assets/images/img-mastercard.png"
+                        alt=""
+                        class="img-mastercard"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="other">
+                  <p>Other options</p>
+                  <div class="list-options">
+                    <p>Activate Credit Card</p>
+                    <img
+                      src="assets/images/right-arrow.svg"
+                      alt="arrow"
+                      class="arrow-right"
+                    />
+                  </div>
+                  <div class="list-options">
+                    <p>Voucher Wallet</p>
+                    <img
+                      src="assets/images/right-arrow.svg"
+                      alt="arrow"
+                      class="arrow-right"
+                    />
+                  </div>
+                  <div class="list-options">
+                    <p>Deposit a Check</p>
+                    <img
+                      src="assets/images/right-arrow.svg"
+                      alt="arrow"
+                      class="arrow-right"
+                    />
+                  </div>
+                  <div class="list-options">
+                    <p>Generate OTP</p>
+                    <img
+                      src="assets/images/right-arrow.svg"
+                      alt="arrow"
+                      class="arrow-right"
+                    />
+                  </div>
+                  <div class="list-options">
+                    <p>ATM & Branch Locator</p>
+                    <img
+                      src="assets/images/right-arrow.svg"
+                      alt="arrow"
+                      class="arrow-right"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="bodyDeposit" class="row row-body row-body-dashboard">
+              <div id="deposit">
+                <div class="group">
+                  <label for="depositAccountNumber">Account Number:</label>
+                  <input
+                    type="number"
+                    class="depositAccountNumber"
+                    id="depositAccountNumber"
+                    name="depositAccountNumber"
+                    placeholder="Enter Account Number"
+                    required
+                  />
+                </div>
+                <div class="group">
+                  <label for="depositCustomerName">Account Name</label>
+                  <input
+                    type="text"
+                    id="depositCustomerName"
+                    name="depositCustomerName"
+                    placeholder="Enter Account Name"
+                    pattern="[a-zA-Z][a-zA-Z ]{2,}"
+                    required
+                  />
+                </div>
+                <div class="group">
+                  <label for="depositAmount">Amount</label>
+                  <input
+                    type="number"
+                    id="depositAmount"
+                    name="depositAmount"
+                    placeholder="Enter Amount"
+                    required
+                  />
+                </div>
+                <a id="btnDepositCustomer" href="#">Submit</a>
+              </div>
+            </div>
+            <div id="bodySend" class="row row-body row-body-dashboard">
+              <div id="send">
+                <div class="group">
+                  <label for="sendAccountNumber">Account Number:</label>
+                  <p id="errorsendAccountNumber">Please enter account number</p>
+                  <input
+                    type="number"
+                    id="sendAccountNumber"
+                    name="sendAccountNumber"
+                    placeholder="Enter Account Number"
+                    onkeypress="removeErrorSend()"
+                    required
+                  />
+                </div>
+                <div class="group">
+                  <label for="sendAccountName">Account Name</label>
+                  <p id="errorsendAccountName">Please enter account name</p>
+                  <input
+                    type="text"
+                    id="sendAccountName"
+                    name="sendAccountName"
+                    placeholder="Enter Account Name"
+                    pattern="[a-zA-Z][a-zA-Z ]{2,}"
+                    onkeypress="removeErrorSend()"
+                    required
+                  />
+                </div>
+                <div class="group">
+                  <label for="sendAmount">Amount</label>
+                  <p id="errorsendAmount">Please enter amount</p>
+                  <input
+                    type="number"
+                    id="sendAmount"
+                    name="sendAmount"
+                    placeholder="Enter Amount"
+                    onkeypress="removeErrorSend()"
+                    required
+                  />
+                </div>
+                <div class="group">
+                  <label for="sendDescription">Enter Description</label>
+                  <textarea
+                    id="sendDescription"
+                    name="sendDescription"
+                    rows="3"
+                    cols="33"
+                    placeholder="Enter Description (Optional)"
+                  ></textarea>
+                </div>
+                <a id="btnSendMoney" href="#">Send</a>
+              </div>
+            </div>
+            <div id="bodyWithdraw" class="row row-body row-body-dashboard">
+              <div id="withdraw">
+                <div class="group">
+                  <label for="withdrawAccountNumber">Account Number:</label>
+                  <input
+                    type="number"
+                    class="withdrawAccountNumber"
+                    id="withdrawAccountNumber"
+                    name="withdrawAccountNumber"
+                    placeholder="Enter Account Number"
+                    required
+                  />
+                </div>
+                <div class="group">
+                  <label for="withdrawCustomerName">Account Name</label>
+                  <input
+                    type="text"
+                    id="withdrawCustomerName"
+                    name="withdrawCustomerName"
+                    placeholder="Enter Account Name"
+                    pattern="[a-zA-Z][a-zA-Z ]{2,}"
+                    required
+                  />
+                </div>
+                <div class="group">
+                  <label for="withdrawAmount">Amount</label>
+                  <input
+                    type="number"
+                    id="withdrawAmount"
+                    name="withdrawAmount"
+                    placeholder="Enter Amount"
+                    required
+                  />
+                </div>
+                <a id="btnWithdrawCustomer" href="#">Submit</a>
+              </div>
+            </div>
+            <div id="bodyHistory" class="row row-body row-body-dashboard">
+              <div id="transactionList">
+                <table id="transactions">
+                  <tr class="user-header">
+                    <th>Transaction ID</th>
+                    <th>Date</th>
+                    <th>Account Number</th>
+                    <th>Type</th>
+                    <th class="text-center">Amount</th>
+                    <th class="title-balance text-center">Initial Balance</th>
+                    <th class="title-balance text-center">Account Balance</th>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id="bodyHistoryUser" class="row row-body row-body-dashboard">
+              <div id="transactionListUser">
+                <table id="transactionsUser">
+                  <tr class="user-header">
+                    <th>Transaction ID</th>
+                    <th class="text-center">Date</th>
+                    <th class="text-center">From/To Account Number</th>
+                    <th class="text-center">Type</th>
+                    <th class="text-center">Amount</th>
+                    <th class="title-balance text-center">Initial Balance</th>
+                    <th class="title-balance text-center">Account Balance</th>
+                    <th class="title-balance text-center">Description</th>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id="bodyBudget" class="row row-body row-body-dashboard">
+              <div id="budget">
+                <div class="group">
+                  <label for="budgetAmount">Amount</label>
+                  <p id="errorbudgetAmount">Please enter amount</p>
+                  <input
+                    type="number"
+                    id="budgetAmount"
+                    name="budgetAmount"
+                    placeholder="Enter Amount"
+                    onkeypress="removeErrorBudget()"
+                    required
+                  />
+                </div>
+                <div class="group">
+                  <label for="budgetDescription">Enter Description</label>
+                  <input
+                    type="text"
+                    id="budgetDescription"
+                    name="budgetDescription"
+                    placeholder="Enter Expense Description"
+                    pattern="[a-zA-Z][a-zA-Z ]{2,}"
+                    onkeypress="removeErrorBudget()"
+                    required
+                  />
+                </div>
+                <a id="btnBudgetSubmit" href="#">Submit</a>
+              </div>
+              <div id="budgetListUser">
+                <div id="expenses-amount" class="val danger-color"></div>
+                <table id="budgetUser">
+                  <tr class="user-header">
+                    <th class="text-center">Expense Amount</th>
+                    <th
+                      class="title-balance text-center"
+                      style="padding-left: 20px"
+                    >
+                      Description
+                    </th>
+                  </tr>
+                </table>
+                <div id="expenses-list"></div>
+              </div>
+            </div>
+            <div id="bodyUsers" class="row row-body row-body-dashboard">
+              <div id="userList">
+                <table id="customers">
+                  <tr class="user-header">
+                    <th>Account Number</th>
+                    <th>Name</th>
+                    <th>Email Address</th>
+                    <th class="title-balance">Account Balance</th>
+                  </tr>
+                </table>
+                <div class="button-add-user">
+                  <a id="btnAddUser" href="#">Add User</a>
+                </div>
+              </div>
+              <div id="addUser">
+                <div class="back-user">
+                  <a id="backUser" href="#"
+                    ><i class="far fa-chevron-left"></i> Back</a
+                  >
+                </div>
+                <div class="grouptype">
+                  <div class="group">
+                    <label for="customerAccountNumber">Account Number:</label>
+                    <input
+                      type="text"
+                      class="account-number"
+                      id="accountNumber"
+                      name="accountNumber"
+                      disabled
+                    />
+                  </div>
+                  <div class="group group-accountype">
+                    <label for="customerAccountType">Account Type</label>
+                    <select name="customerAccountType" id="customerAccountType">
+                      <option value="admin">Admin</option>
+                      <option value="client" selected="selected">Client</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="group">
+                  <label for="customerName">Name</label>
+                  <input
+                    type="text"
+                    id="customerName"
+                    name="customerName"
+                    placeholder="Enter name"
+                    pattern="[a-zA-Z][a-zA-Z ]{2,}"
+                    required
+                  />
+                </div>
+                <div class="group">
+                  <label for="customerEmail">Email Address</label>
+                  <input
+                    type="email"
+                    id="customerEmail"
+                    name="customerEmail"
+                    placeholder="Enter email address"
+                    required
+                  />
+                </div>
+                <div class="group">
+                  <label for="customerBalance"
+                    >Initial Deposit (Optional)</label
+                  >
+                  <input
+                    type="number"
+                    id="customerBalance"
+                    name="customerBalance"
+                    placeholder="Enter Initial Balance"
+                  />
+                </div>
+                <a id="btnCreateCustomer" href="#">Submit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="assets/app.js" async defer></script>
+</html>
