@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://static.fontawesome.com/css/fontawesome-app.css"
+    />
+    <link rel="stylesheet" href="assets/styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-left">
+            <a href="#">
+              <img
+                src="assets/images/findvaccineph.png"
+                alt=""
+                class="site-logo"
+              />
+            </a>
+          </div>
+          <div class="col-right">
+            <ul>
+              <li><a href="/findvaccineph/" class="text-bold">Home</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+            <a class="btn btn-login" href="login.html">Admin Login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="main">
+      <section id="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-left">
+              <h1>
+                Find a COVID-19
+                <font class="text-color-blue">vaccine</font> center <br />near
+                you.
+              </h1>
+              <p>
+                Use the app to find a location near you, then call or visit
+                their website to make an appointment. COVID-19 can have
+                complications that serious and life-threatening. Getting
+                vaccinated helps you build protection without experiencing the
+                disease.
+              </p>
+              <div class="search-city-wrapper">
+                <label id="searchLabel" for="searchCity" style="color: red"
+                  >City not found</label
+                >
+                <input
+                  type="text"
+                  id="searchCity"
+                  class="text-box"
+                  name="searchCity"
+                  placeholder="Search city here"
+                  onfocus="removeBarangay()"
+                  required
+                />
+                <div id="searchCitySuggestion" class="autocom-box">
+                  <li>Login Form in HTML</li>
+                  <li>Login Form in HTML</li>
+                  <li>Login Form in HTML</li>
+                </div>
+              </div>
+              <div class="search-barangay-wrapper">
+                <label
+                  id="searchLabelBarangay"
+                  for="searchBarangay"
+                  style="color: red"
+                  >Barangay not found</label
+                >
+                <input
+                  type="text"
+                  id="searchBarangay"
+                  class="text-box"
+                  name="searchBarangay"
+                  placeholder="Search barangay here"
+                  required
+                  disabled
+                />
+                <div id="searchBarangaySuggestion" class="autocom-box-barangay">
+                  <li>Login Form in HTML</li>
+                  <li>Login Form in HTML</li>
+                  <li>Login Form in HTML</li>
+                </div>
+              </div>
+
+              <a href="#result" id="showSearch" onclick="showSearchResult()"
+                >Search</a
+              >
+            </div>
+            <div class="col-right">
+              <img
+                src="assets/images/header-image.jpg"
+                alt=""
+                class="header-image"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="result">
+        <div class="container">
+          <div class="row">
+            <span>SEARCH RESULT</span>
+            <h2 id="resultTitle">Vaccination Center in your area</h2>
+          </div>
+          <div class="row row-card"></div>
+        </div>
+      </section>
+      <section id="sheduleAppointment">
+        <div class="container">
+          <div class="row row-appointments">
+            <span>APPOINTMENT FOR COVID-19 VACCINE</span>
+            <h2 id="resultTitle">Book an appointment</h2>
+          </div>
+          <div class="row row-appoint-form first-form">
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              placeholder="Your First Name *"
+              required
+            />
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              placeholder="Your Last Name *"
+              required
+            />
+          </div>
+          <div class="row row-appoint-form second-form">
+            <input
+              type="text"
+              id="middleName"
+              name="middleName"
+              placeholder="Your Middle Name *"
+              required
+            />
+
+            <input
+              type="date"
+              id="birthday"
+              name="birthday"
+              placeholder="Your Birthday *"
+              required
+            />
+          </div>
+          <div class="row row-appoint-form third-form">
+            <input
+              type="number"
+              id="mobileNumber"
+              name="mobileNumber"
+              placeholder="Your Mobile Number * (09XXXXXXXXX)"
+              required
+            />
+            <select id="gender" name="gender">
+              <option value="" disabled selected>Your Gender *</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="row row-appoint-form four-form">
+            <input
+              type="text"
+              id="homeAddress"
+              name="homeAddress"
+              placeholder="Your Complete Address *"
+              required
+            />
+          </div>
+          <div class="row row-appoint-form five-form">
+            <div class="labelinput">
+              <label
+                for="preferred"
+                style="text-align: left; padding-left: 10px; color: white"
+                >Your Preferred Vaccine Center</label
+              >
+              <input
+                type="text"
+                id="preferred"
+                name="preferred"
+                placeholder="Your Preferred Vaccine Center"
+                required
+                disabled
+              />
+            </div>
+          </div>
+          <div class="row row-appoint-form six-form">
+            <div class="labelinput">
+              <label
+                for="preferred"
+                style="text-align: left; padding-left: 10px; color: white"
+                >Your Preferred Vaccination Date *</label
+              >
+              <input
+                type="date"
+                id="preferredDate"
+                name="preferredDate"
+                placeholder="Your Preferred Vaccination Date"
+                required
+              />
+            </div>
+          </div>
+          <dive id="errorForm">* You must fill out the required field/s</dive>
+          <input
+            onclick="submitForm()"
+            type="submit"
+            value="Submit"
+            id="submitAppointment"
+          />
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="assets/scripts/app.js" async></script>
+</html>

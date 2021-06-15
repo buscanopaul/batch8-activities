@@ -1,0 +1,953 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: #2a2a2a;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Roboto-Regular";
+}
+
+@font-face {
+  font-family: Touche-Bold;
+  src: url("../fonts/Touche-W03-Bold.ttf");
+}
+
+@font-face {
+  font-family: Roboto-Regular;
+  src: url("../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: Roboto-Bold;
+  src: url("../fonts/Roboto-Bold.ttf");
+}
+
+.container {
+  max-width: 1400px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 0 auto;
+}
+
+header {
+  padding-top: 20px;
+  background-color: #f4f6fe;
+}
+
+header .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .site-logo {
+  height: 50px;
+}
+
+header .col-right {
+  display: flex;
+  flex-direction: row;
+}
+
+header ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  display: flex;
+}
+
+header .col-right li a {
+  font-size: 16px;
+  line-height: 26px;
+  color: #2a2a2a;
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+header a.btn {
+  background: #0660fe;
+  margin-right: 10px;
+  padding: 0 39px;
+  border-radius: 8px;
+  line-height: 40px;
+  text-decoration: none;
+  color: white;
+}
+
+header a.btn.btn-login {
+  background: #0660fe;
+  border: 1px solid #0660fe;
+  color: white;
+}
+
+#header {
+  background-color: #f4f6fe;
+  padding-top: 20px;
+  height: 100vh;
+}
+
+#header .row {
+  display: flex;
+  align-items: center;
+}
+
+#header .col-left,
+#header .col-right {
+  width: 50%;
+}
+
+#header .col-left {
+  display: flex;
+  flex-direction: column;
+  padding-right: 100px;
+}
+
+#header h1 {
+  font-size: 59px;
+  line-height: 69px;
+  font-family: "Touche-Bold";
+  margin-bottom: 10px;
+}
+
+#header .col-left p {
+  margin-bottom: 40px;
+}
+
+#header .col-left input {
+  border: none;
+  border-radius: 8px;
+  line-height: 44px;
+  padding: 0 20px;
+  outline: none;
+  margin-bottom: 15px;
+  width: 100%;
+  position: relative;
+}
+
+#header a#showSearch {
+  background: rgb(6, 96, 254);
+  padding: 0px 39px;
+  border-radius: 8px;
+  line-height: 40px;
+  color: white;
+  width: 30%;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  line-height: 48px;
+  margin-top: 10px;
+}
+
+#result {
+  height: 100vh;
+  padding-top: 80px;
+}
+
+#result .row {
+  text-align: center;
+}
+
+#result span {
+  color: #0660fe;
+}
+
+#result h2 {
+  font-size: 49px;
+  line-height: 59px;
+  font-family: "Touche-Bold";
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#result .card {
+  width: 33.333%;
+  background-color: #0660fe;
+  border-radius: 8px;
+  padding: 20px 30px;
+}
+
+#result .card:first-child {
+  margin: 0px 10px 0px 0px;
+}
+
+#result .card:nth-child(even) {
+  margin: 0px 10px 0px 10px;
+}
+
+#result .card:nth-child(3) {
+  margin: 0px 10px 0px 10px;
+}
+
+#result .row.row-card {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+#result .card h5 {
+  font-size: 20px;
+  line-height: 30px;
+  color: white;
+  text-align: left;
+  font-family: "Touche-Bold";
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+#result p.vaccine-address {
+  text-align: left;
+  font-size: 15px;
+  line-height: 25px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+#result .vaccine-address-link {
+  text-decoration: none;
+}
+
+#result .vaccine-address-link:hover {
+  text-decoration: underline;
+}
+
+#result .vaccine-type.border-bottom-gray {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e2e4e82e;
+  border-top: 1px solid #e2e4e82e;
+  padding-top: 5px;
+}
+
+#result .vaccine-type p {
+  color: white;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+#result .group-book {
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+#result a.book-vaccine {
+  text-decoration: none;
+  color: #0660fe;
+  padding: 0 39px;
+  font-size: 15px;
+  line-height: 45px;
+}
+
+.cure {
+  text-transform: capitalize;
+}
+
+.vaccine-group {
+  display: flex;
+  flex-direction: column;
+  height: 170px;
+}
+
+#sheduleAppointment {
+  background-color: #0660fe;
+  position: relative;
+  height: 100%;
+  margin-top: 50px;
+  padding-bottom: 100px;
+  display: none;
+}
+
+#sheduleAppointment .row-appointments span {
+  color: white;
+}
+
+#sheduleAppointment::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 74px;
+  left: 0;
+  background-image: url("../images/appointment-before.png");
+  z-index: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#sheduleAppointment::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 72px;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../images/appointment-after.png");
+}
+
+#sheduleAppointment .row {
+  text-align: center;
+  padding-top: 100px;
+}
+
+#sheduleAppointment .row-appoint-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sheduleAppointment .row-appointment span {
+  color: white;
+}
+
+#sheduleAppointment h2 {
+  font-size: 49px;
+  line-height: 59px;
+  font-family: "Touche-Bold";
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: white;
+}
+
+#sheduleAppointment input {
+  background: #2e77fe;
+  color: #fff;
+  border: none;
+  outline: none;
+  width: 50%;
+  height: 55px;
+  font-size: 14px;
+  line-height: normal;
+  padding: 0px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin: 0 10px;
+}
+
+#sheduleAppointment select {
+  background-color: #2e77fe;
+  color: #fff;
+  border: none;
+  outline: none;
+  width: 50%;
+  height: 55px;
+  font-size: 14px;
+  line-height: normal;
+  padding: 0px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin: 0 10px;
+}
+
+#sheduleAppointment .container {
+  max-width: 800px;
+}
+
+#birthday:focus:before,
+#birthday:valid:before {
+  content: "" !important;
+  font-size: 14px;
+}
+
+#birthday:before {
+  content: attr(placeholder) !important;
+  color: #fff;
+  opacity: 0.5;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+#mobileNumber::-webkit-outer-spin-button,
+#mobileNumber::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.row.row-appoint-form.second-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px !important;
+}
+
+.row.row-appoint-form.third-form,
+.row.row-appoint-form.first-form {
+  padding-top: 30px !important;
+}
+
+#gender {
+  background-color: #2e77fe;
+  color: white !important;
+  height: 55px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: normal;
+  padding: 0px 15px;
+  font-weight: 400;
+  background: #f5f5f5;
+  border: 0;
+  border-radius: 8px;
+  width: 30%;
+}
+
+#submitAppointment {
+  color: #0660fe !important;
+  background-color: white !important;
+  font-size: 18px !important;
+  width: 30% !important;
+  cursor: pointer;
+}
+
+.labelinput label {
+  margin-bottom: 10px;
+}
+
+.row.row-appoint-form.six-form {
+  margin-bottom: 30px;
+}
+
+.row.row-appoint-form.four-form,
+.row.row-appoint-form.five-form,
+.row.row-appoint-form.six-form {
+  padding-top: 30px !important;
+}
+
+.row.row-appoint-form.four-form input {
+  width: 100% !important;
+}
+
+.labelinput {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#preferred {
+  width: 97% !important;
+}
+
+.search-city-wrapper,
+.search-barangay-wrapper {
+  position: relative;
+}
+
+.autocom-box,
+.autocom-box-barangay {
+  background-color: white;
+  padding: 10px 8px;
+  overflow-y: auto;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  border-top: 1px solid lightgray;
+  position: absolute;
+  width: 100%;
+  top: 38px;
+  z-index: 999;
+}
+
+.autocom-box.active,
+.autocom-box-barangay.active {
+  opacity: 1;
+}
+
+.autocom-box.active li,
+.autocom-box-barangay.active li {
+  display: block;
+}
+
+.autocom-box li,
+.autocom-box-barangay li {
+  list-style: none;
+  padding: 8px 12px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 3px;
+  display: none;
+}
+
+.autocom-box li:hover,
+.autocom-box-barangay li:hover {
+  background-color: #f3f6fd;
+}
+
+#result {
+  display: none;
+}
+
+#cardCity,
+#cardBarangay {
+  display: none;
+}
+
+#searchLabel,
+#searchLabelBarangay {
+  display: none;
+}
+
+#errorForm {
+  color: red;
+  display: block;
+  padding-left: 10px;
+  margin-bottom: 25px;
+  display: none;
+}
+
+.row.row-thankyou {
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.row-thankyou-text h5 {
+  font-family: "Touche-Bold";
+  text-align: center;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.row-thankyou-text h4 {
+  font-family: "Touche-Bold";
+  text-align: center;
+  font-size: 18px;
+  line-height: 38px;
+}
+
+.container-login {
+  background: #f3f6fd;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+.row.row-login {
+  display: flex;
+  flex-direction: row;
+}
+
+.row-login .col-left,
+.row-login .col-right {
+  width: 50%;
+  height: 90vh;
+  max-width: 800px;
+  padding-left: 70px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.row-login .col-left img {
+  height: 50px;
+}
+
+.row-login .col-left h1 {
+  font-family: "Touche-Bold";
+  font-size: 40px;
+  line-height: 50px;
+  margin-bottom: 0;
+}
+
+.row-login .col-left h5 {
+  font-family: "Roboto-Regular";
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.row-login .col-right {
+  background-color: white;
+  padding-right: 200px;
+  padding-left: 200px;
+}
+
+.row-login .col-right h3 {
+  font-size: 32px;
+  line-height: 42px;
+  font-family: "Touche-Bold";
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.row-login .col-right label {
+  font-family: "Roboto-Regular";
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.row-login .col-right input {
+  padding: 15px;
+  margin-bottom: 20px;
+  outline: none;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding-left: 20px;
+}
+
+#btnLogin {
+  background: rgb(6, 96, 254);
+  padding: 0px 39px;
+  border-radius: 8px;
+  line-height: 40px;
+  color: white;
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  line-height: 48px;
+  margin-top: 20px;
+  border: none;
+}
+
+header.login {
+  padding: 0;
+}
+
+header.login .container {
+  max-width: 100%;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+
+header.login .col-left {
+  padding-left: 70px;
+  width: 50%;
+  padding-top: 15px;
+}
+
+header.login .col-right {
+  width: 50%;
+  justify-content: flex-end;
+  background: white;
+  height: 80px;
+  padding-right: 70px;
+  padding-top: 15px;
+}
+
+#btnLogin {
+  cursor: pointer;
+}
+
+/* Style for dashboard */
+
+.header-dashboard {
+  background-color: white;
+  padding-bottom: 10px;
+}
+
+.row-dashboard-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-dashboard-header .col-left,
+.row-dashboard-header .col-right {
+  width: 50%;
+  height: 70vh;
+}
+
+.row-dashboard-header .col-left,
+.row-dashboard-header .col-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-dashboard {
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: 70px;
+  padding-right: 70px;
+  background-color: #f4f6fe;
+}
+
+.row-dashboard-header {
+  padding: 50px 0;
+}
+
+.row-dashboard-header .col-left h1 {
+  font-size: 48px;
+  line-height: 58px;
+  font-family: "Touche-Bold";
+  margin-bottom: 10px;
+}
+
+.row-dashboard-header .col-left p {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.row-dashboard-header .col-left a {
+  padding: 0 39px;
+  border-radius: 8px;
+  text-decoration: none;
+  background-color: #0660fe;
+  width: 25%;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+}
+
+.row-dashboard-header .col-left {
+  padding-right: 50px;
+}
+
+.row-dashboard-header .col-right {
+  padding: 0 100px;
+}
+
+.row-dashboard-header .col-right h1 {
+  font-size: 24px;
+  line-height: 34px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  font-family: "Touche-Bold";
+}
+
+.row-dashboard-header .col-right input {
+  border: none;
+  border-radius: 8px;
+  line-height: 44px;
+  padding: 0 20px;
+  outline: none;
+  margin-bottom: 15px;
+  width: 100%;
+  position: relative;
+}
+
+#btnSubmitVaccine {
+  background-color: #0660fe;
+  color: white;
+  margin-top: 20px;
+}
+
+.row-menu-admin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+#menuVaccine {
+  background-color: #0660fe;
+  padding: 10px;
+  color: white;
+  border-radius: 8px;
+}
+
+.row-menu-admin a {
+  color: #2a2a2a;
+  margin: 0 20px;
+  text-decoration: none;
+}
+
+.container-body {
+  height: 100vh;
+}
+
+.row-body {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  margin-top: 40px;
+}
+
+.row-body .card:first-child {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+.row-body .card:nth-child(3) {
+  padding-left: 20px;
+  padding-right: 0;
+}
+
+.row-body .card {
+  width: 33.333%;
+  padding: 0 15px;
+  margin-bottom: 40px;
+}
+
+.row-body .sub-card {
+  background-color: #0660fe;
+  border-radius: 8px;
+  padding: 20px 30px;
+}
+
+.row-body .vaccine-group {
+  display: flex;
+  flex-direction: column;
+  height: 170px;
+}
+
+.row-body .card h5 {
+  font-size: 20px;
+  line-height: 30px;
+  color: white;
+  text-align: left;
+  font-family: "Touche-Bold";
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.row-body .vaccine-address-link {
+  text-decoration: none;
+}
+
+.row-body .vaccine-address {
+  text-align: left;
+  font-size: 15px;
+  line-height: 25px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.row-body .vaccine-type.border-bottom-gray {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e2e4e82e;
+  border-top: 1px solid #e2e4e82e;
+  padding-top: 5px;
+}
+
+.row-body .vaccine-type p {
+  color: white;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.row-body .group-book {
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 30px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.row-body a.book-vaccine {
+  text-decoration: none;
+  color: #0660fe;
+  padding: 0 39px;
+  font-size: 15px;
+  line-height: 45px;
+  text-align: center;
+}
+
+.row.row-body-appointments,
+.row.row-body-users {
+  height: 100vh;
+}
+
+#appointmentsList,
+#usersList {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  color: #2a2a2a;
+  border-collapse: separate;
+  border-spacing: 0 1em;
+  width: 100%;
+}
+
+#appointmentsList tr:hover,
+#usersList tr:hover {
+  background-color: #e3e3e4;
+}
+
+#appointmentsList td,
+#appointmentsList th,
+#usersList td,
+#usersList th {
+  /* border: 1px solid #ddd; */
+  padding: 8px;
+}
+
+#table-label {
+  background-color: #f3f6fd;
+  border-radius: 8px;
+  font-family: "Touche-Bold";
+}
+
+#table-label th:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding-left: 20px;
+}
+
+#table-label th:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.list-appointments td {
+  border: 1px solid #e3e3e4;
+  border-left: 0;
+  border-right: none;
+}
+
+.list-appointments td:first-child {
+  border-left: 1px solid #e3e3e4;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding-left: 20px !important;
+}
+
+.list-appointments td:last-child {
+  border-right: 1px solid #e3e3e4;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.row-body-appointments,
+.row-body-users,
+.row-dashboard-header {
+  display: none;
+}
+
+#headerVaccine {
+  display: flex;
+}
+
+#headerAppointments {
+  padding: 150px 0;
+}
+
+#btnSubmitVaccine {
+  cursor: pointer;
+}
+
+.row-boy .text-bold {
+  font-family: Roboto-Bold;
+}
+
+.text-color-blue {
+  color: #0660fe;
+}

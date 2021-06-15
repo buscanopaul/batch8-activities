@@ -1,0 +1,139 @@
+{
+  "appointments": [
+    {
+      "firstName": "Princess",
+      "lastName": "Buscano",
+      "middleName": "Ico",
+      "birthday": "1996-01-24",
+      "mobileNumber": "09270362958",
+      "gender": "female",
+      "completeAddress": "Unit 10 Condo 5 AFPMC",
+      "preferredCenter": "Quezon City Academy",
+      "created_at": "2021-6-7 19:15:16",
+      "preferredDate": "2021-06-14",
+      "status": "pending",
+      "id": "_IBQstx"
+    },
+    {
+      "firstName": "Paul",
+      "lastName": "Buscano",
+      "middleName": "Lorenz",
+      "birthday": "2021-06-24",
+      "mobileNumber": "09997150096",
+      "gender": "male",
+      "completeAddress": "Bagumbong",
+      "preferredCenter": "Bagumbong High School",
+      "created_at": "2021-6-9 10:53:16",
+      "preferredDate": "2021-06-17",
+      "status": "pending",
+      "id": "H1UrMdK"
+    }
+  ],
+  "facilities": [
+    {
+      "id": 1,
+      "city": "quezon city",
+      "barangay": [
+        {
+          "id": 1,
+          "barangayName": "alicia",
+          "schools": [
+            {
+              "schoolId": 202106,
+              "schoolName": "jose abad santos memorial school",
+              "schoolAddress": "51 Congressional Ave, Project 8, Quezon City, Metro Manila",
+              "vaccineType": "sinovac",
+              "created_at": "2021-6-14 21:11:16"
+            },
+            {
+              "schoolId": 202107,
+              "schoolName": "quezon city academy",
+              "schoolAddress": "1010 Epifanio de los Santos Ave, Bago Bantay, Quezon City, 1105 Metro Manila",
+              "vaccineType": "astrazenica",
+              "created_at": "2021-6-14 21:11:16"
+            },
+            {
+              "schoolId": 202108,
+              "schoolName": "batasan hills national high school",
+              "schoolAddress": "Batasan Rd, Quezon City, 1126 Metro Manila",
+              "vaccineType": "astrazenica",
+              "created_at": "2021-6-14 21:11:16"
+            }
+          ]
+        }
+      ],
+      "country": "philippines"
+    },
+    {
+      "id": 2,
+      "city": "caloocan",
+      "barangay": [
+        {
+          "id": 2,
+          "barangayName": "bagong silang",
+          "schools": [
+            {
+              "schoolId": 202111,
+              "schoolName": "bagong silang",
+              "schoolAddress": "Phase III, Bagong Silang, 176, Caloocan City North, Metro Manila",
+              "vaccineType": "sinovac",
+              "created_at": "2021-6-14 21:11:16"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "barangayName": "bagumbong",
+          "schools": [
+            {
+              "schoolId": 202112,
+              "schoolName": "bagumbong high school",
+              "schoolAddress": "blk 9 lot 25 corinthian street northcrest village bagumbong",
+              "vaccineType": "astrazenica",
+              "created_at": "2021-6-14 21:11:16"
+            }
+          ]
+        }
+      ],
+      "country": "philippines"
+    },
+    {
+      "city": "manila",
+      "country": "philippines",
+      "barangay": [
+        {
+          "barangayName": "tondo",
+          "schools": [
+            {
+              "schoolName": "tondo high school",
+              "schoolAddress": "unit 10 condo 5 afpmc",
+              "vaccineType": "sinovac",
+              "created_at": "2021-6-14 21:11:16"
+            }
+          ]
+        }
+      ],
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "id": "69",
+      "email": "adminadmin@gmail.com",
+      "firstName": "adminadmin",
+      "lastName": "nimdanimda",
+      "password": "nimda",
+      "created_at": "2021-6-9 10:53:16",
+      "status": "activated"
+    },
+    {
+      "id": "99",
+      "email": "buscano.paul@gmail.com",
+      "firstName": "Paul",
+      "lastName": "Buscano",
+      "password": "adminadmin",
+      "created_at": "2021-6-9 10:53:16",
+      "status": "activated"
+    }
+  ]
+}

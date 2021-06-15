@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://static.fontawesome.com/css/fontawesome-app.css"
+    />
+    <link rel="stylesheet" href="assets/styles/styles.css" />
+  </head>
+  <body>
+    <header class="login" lass="container">
+        <div class="row">
+          <div class="col-left">
+            <a href="/findvaccineph">
+              <img
+                src="assets/images/findvaccineph.png"
+                alt=""
+                class="site-logo"
+              />
+            </a>
+          </div>
+          <div class="col-right">
+            <ul>
+              <li><a href="/findvaccineph/" class="text-bold">Home</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="main">
+      <div class="container container-login">
+        <div class="row row-login">
+          <div class="col-left">
+            <h1>
+              Welcome to<br /><font class="text-color-blue">admin panel</font> on the
+              web
+            </h1>
+            <h5>
+              Access your vaccine centers and appointments<br />
+              data in the web app — quickly and<br />
+              securely.
+            </h5>
+          </div>
+          <div class="col-right">
+            <h3>Log in to FindVaccinePH</h3>
+            <label for="emailAdmin">Enter your email to log in.</label>
+            <input
+              type="email"
+              id="emailAdmin"
+              name="emailAdmin"
+              required
+              placeholder="Enter your email address..."
+            />
+            <label for="passwordAdmin">Enter your password to log in</label>
+            <input
+              type="password"
+              id="passwordAdmin"
+              name="passwordAdmin"
+              required
+              placeholder="Enter your password..."
+            />
+
+            <input
+            onclick="submitLogin(event)"
+            type="submit"
+            value="Next"
+            id="btnLogin"
+          />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+   <script src="assets/scripts/login.js" async></script>
+</html>

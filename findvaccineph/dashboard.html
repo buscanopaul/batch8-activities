@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://static.fontawesome.com/css/fontawesome-app.css"
+    />
+    <link rel="stylesheet" href="assets/styles/styles.css" />
+  </head>
+  <body>
+    <header class="header-dashboard">
+      <div class="container">
+        <div class="row">
+          <div class="col-left">
+            <a href="/findvaccineph/">
+              <img
+                src="assets/images/findvaccineph.png"
+                alt=""
+                class="site-logo"
+              />
+            </a>
+          </div>
+          <div class="col-right">
+            <ul>
+              <li><a href="/findvaccineph/" class="text-bold">Home</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+            <a class="btn btn-login" href="/findvaccineph">Logout</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="main">
+      <div class="container container-dashboard">
+        <div id="headerVaccine" class="row row-dashboard-header">
+          <div class="col-left">
+            <h1>
+              Say yes to the Covid-19<br />
+              <font class="text-color-blue">vaccine</font> program
+            </h1>
+            <p>
+              The vaccine has arrived and we are Lorem Ipsum is simply dummy
+              text of the printing and typesetting industry.
+            </p>
+            <a href="#bodyAdmin">Learn more</a>
+          </div>
+          <div class="col-right">
+            <h1>Add Vaccination Center</h1>
+            <input
+              type="text"
+              id="cityName"
+              name="cityName"
+              placeholder="Enter City"
+              required
+            />
+            <input
+              type="text"
+              id="inputbarangayName"
+              name="inputbarangayName"
+              placeholder="Enter Barangay Name"
+              required
+            />
+            <input
+              type="text"
+              id="centerName"
+              name="centerName"
+              placeholder="Enter Vaccination Center"
+              required
+            />
+            <input
+              type="text"
+              id="centerAddress"
+              name="centerAddress"
+              placeholder="Enter Vaccination Center Address"
+              required
+            />
+            <input
+              type="text"
+              id="vaccineType"
+              name="vaccineType"
+              placeholder="Enter Vaccine Type"
+              required
+            />
+            <input
+              onclick="submitVaccine(event)"
+              type="submit"
+              value="Submit"
+              id="btnSubmitVaccine"
+            />
+          </div>
+        </div>
+        <div id="headerAppointments" class="row row-dashboard-header">
+          <div class="col-left">
+            <h1>
+              Say yes to the Covid-19<br />
+              <font class="text-color-blue">vaccine</font> program
+            </h1>
+            <p>
+              The vaccine has arrived and we are Lorem Ipsum is simply dummy
+              text of the printing and typesetting industry.
+            </p>
+            <a href="#bodyAdmin">Learn more</a>
+          </div>
+          <div class="col-right">
+            <h1>Add Appointments</h1>
+            <input
+              type="text"
+              id="appointmentFirstName"
+              name="appointmentFirstName"
+              placeholder="Enter First Name"
+              required
+            />
+            <input
+              type="text"
+              id="appointmentLastName"
+              name="appointmentLastName"
+              placeholder="Enter Last Name"
+              required
+            />
+            <input
+              type="text"
+              id="appointmentMiddleName"
+              name="appointmentMiddleName"
+              placeholder="Enter Middle Name"
+              required
+            />
+            <input
+              type="text"
+              id="appointmentMiddleName"
+              name="appointmentMiddleName"
+              placeholder="Enter Middle Name"
+              required
+            />
+            <input
+              type="date"
+              id="appointmentBirthday"
+              name="appointmentBirthday"
+              placeholder="Your Birthday"
+              required
+            />
+            <input
+              type="text"
+              id="appointmentMobileNumber"
+              name="appointmentMobileNumber"
+              placeholder="Enter Mobile Number"
+              required
+            />
+            <select id="appointmentGender" name="appointmentGender">
+              <option value="" disabled selected>Your Gender *</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+            <input
+              type="text"
+              id="appointmentCompleteAddress"
+              name="appointmentCompleteAddress"
+              placeholder="Enter Complete Address"
+              required
+            />
+            <select id="appointmentGender" name="appointmentGender">
+              <option value="" disabled selected>
+                Preferred Vaccine Center *
+              </option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+
+            <input
+              type="date"
+              id="appointmentVaccineDate"
+              name="appointmentVaccineDate"
+              placeholder="Preferred Vaccine Date"
+              required
+            />
+            <input
+              onclick="submitLogin(event)"
+              type="submit"
+              value="Submit"
+              id="btnSubmitAppointment"
+            />
+          </div>
+        </div>
+        <div id="headerUsers" class="row row-dashboard-header">
+          <div class="col-left">
+            <h1>
+              Say yes to the Covid-19<br />
+              <font class="text-color-blue">vaccine</font> program
+            </h1>
+            <p>
+              The vaccine has arrived and we are Lorem Ipsum is simply dummy
+              text of the printing and typesetting industry.
+            </p>
+            <a href="#bodyAdmin">Learn more</a>
+          </div>
+          <div class="col-right">
+            <h1>Add Admin User</h1>
+            <input
+              type="text"
+              id="country"
+              name="country"
+              placeholder="Enter Country"
+              required
+            />
+            <input
+              type="text"
+              id="cityName"
+              name="cityName"
+              placeholder="Enter City"
+              required
+            />
+            <input
+              type="text"
+              id="barangayName"
+              name="barangayName"
+              placeholder="Enter Barangay"
+              required
+            />
+            <input
+              type="text"
+              id="centerName"
+              name="centerName"
+              placeholder="Enter Center"
+              required
+            />
+            <input
+              type="text"
+              id="centerAddress"
+              name="centerAddress"
+              placeholder="Enter Center Address"
+              required
+            />
+            <input
+              type="text"
+              id="vaccineType"
+              name="vaccineType"
+              placeholder="Enter Vaccine Type"
+              required
+            />
+            <input
+              onclick="submitLogin(event)"
+              type="submit"
+              value="Submit"
+              id="btnSubmitVaccine"
+            />
+          </div>
+        </div>
+      </div>
+      <div id="bodyAdmin" class="container container-body">
+        <div class="row row-menu-admin">
+          <a href="#menuVaccine" id="menuVaccine">Vaccination Centers</a>
+          <a href="#menuAppointments" id="menuAppointments">Appointments</a>
+          <a href="#menuUsers" id="menuUsers">Users</a>
+        </div>
+        <div class="row row-body"></div>
+
+        <div class="row row-body-appointments">
+          <table id="appointmentsList"></table>
+        </div>
+
+        <div class="row row-body-users">
+          <table id="usersList"></table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="assets/scripts/dashboard.js" async></script>
+</html>

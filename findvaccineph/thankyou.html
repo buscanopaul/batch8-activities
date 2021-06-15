@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://static.fontawesome.com/css/fontawesome-app.css"
+    />
+    <link rel="stylesheet" href="assets/styles/styles.css" />
+  </head>
+  <body>
+    <header style="padding-bottom: 15px">
+      <div class="container">
+        <div class="row">
+          <div class="col-left">
+            <a href="/findvaccineph">
+              <img
+                src="assets/images/findvaccineph.png"
+                alt=""
+                class="site-logo"
+              />
+            </a>
+          </div>
+          <div class="col-right">
+            <ul>
+              <li><a href="/findvaccineph/" class="text-bold">Home</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+            <a class="btn btn-login" href="login.html">Admin Login</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="main">
+      <div class="container">
+        <div class="row row-thankyou">
+          <img src="assets/images/vaccine-stickers.png" alt="" />
+        </div>
+        <div class="row row-thankyou-text">
+          <h5>
+            Thank you for your registration in our COVID-19 vaccination program.
+          </h5>
+
+          <h4>
+            Please make sure, You will be at the
+            <font id="thankyouCenter" class="text-color-blue"
+              >Tondo High School</font
+            >
+            on
+            <font id="thankyouDate" class="text-color-blue"
+              >January 20, 2021</font
+            >, on or before 7 AM. <br />Note: Please bring one valid ID at the
+            venue.
+          </h4>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const thankyouCenter = document.getElementById("thankyouCenter");
+    const thankyouDate = document.getElementById("thankyouDate");
+    let queryString = decodeURIComponent(window.location.search);
+    queryString = queryString.substring(1);
+    let queries = queryString.split("&");
+    let result = [];
+    for (let i = 0; i < queries.length; i++) {
+      result.push(queries[i].split("=")[1]);
+    }
+
+    let myDate = new Date.parse(result[1]);
+    let myUTCDate = Date.UTC(
+      myDate.getFullYear(),
+      myDate.getMonth(),
+      myDate.getDate()
+    );
+
+    thankyouCenter.innerHTML = result[0];
+    thankyouDate.innerHTML = myUTCDate;
+  </script>
+</html>
