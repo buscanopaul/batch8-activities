@@ -1,6 +1,6 @@
 # batch8-activities
 
-You can check my portfolio website: [Behance](http://https://www.behance.net/paulbuscano003)
+You can check my portfolio website: [Behance](https://www.behance.net/paulbuscano003)
 
 ## Project Links
 
