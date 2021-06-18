@@ -30,6 +30,29 @@ let centerName = document.getElementById("centerName");
 let centerAddress = document.getElementById("centerAddress");
 let vaccineType = document.getElementById("vaccineType");
 
+// Variables for add appointment
+let appointmentFirstName = document.getElementById("appointmentFirstName");
+let appointmentLastName = document.getElementById("appointmentLastName");
+let appointmentMiddleName = document.getElementById("appointmentMiddleName");
+let appointmentBirthday = document.getElementById("appointmentBirthday");
+let appointmentMobileNumber = document.getElementById(
+  "appointmentMobileNumber"
+);
+let appointmentGender = document.getElementById("appointmentGender");
+let appointmentCompleteAddress = document.getElementById(
+  "appointmentCompleteAddress"
+);
+
+let appointmentCenter = document.getElementById("appointmentCenter");
+let appointmentVaccineDate = document.getElementById("appointmentVaccineDate");
+
+// Variables for add user
+let adminFirstName = document.getElementById("adminFirstName");
+let adminLastName = document.getElementById("adminLastName");
+let adminEmail = document.getElementById("adminEmail");
+let adminPassword = document.getElementById("adminPassword");
+let adminConfirmPassword = document.getElementById("adminConfirmPassword");
+
 // Parent api
 async function getAPI() {
   const response = await fetch("http://localhost:3000/facilities");
@@ -71,7 +94,6 @@ function showVaccineList() {
                     <div class="group-book" data-id="${school.schoolName}" onclick="some_func(this)" href="#sheduleAppointment">
                     <p id="cardCity">${element.city}</p>
                     <p id="cardBarangay">${barangay.barangayName}</p>
-                      <a id="btnBook" class="book-vaccine" href="#sheduleAppointment">Book Now</a>
                     </div>
                     </div>
                   </div>`;
@@ -103,6 +125,20 @@ function showAppointmentList() {
             </tr>`;
   getAPIAppointments().then((data) => {
     for (const element of data) {
+      let isPending;
+      let isActivated;
+      let is1stDose;
+      let is2ndDose;
+
+      if (element.status == "pending") {
+        isPending = "selected";
+      } else if (element.status == "activated") {
+        isActivated = "selected";
+      } else if (element.status == "1stdose") {
+        is1stDose = "selected";
+      } else {
+        is2ndDose = "selected";
+      }
       outputAppointment += `<tr class="list-appointments">
               <td>#${element.id}</td>
               <td>${element.firstName} ${element.lastName}</td>
@@ -110,7 +146,14 @@ function showAppointmentList() {
               <td>${element.preferredCenter}</td>
               <td>${element.created_at}</td>
               <td>${element.preferredDate}</td>
-              <td style="color: red;">${element.status}</td>
+              <td>
+              <select id="mySelect" data-record-id="${element.id}" onchange="myStatus(this)">
+                <option value="pending" ${isPending}>Pending</option>
+                <option value="activated" ${isActivated}>Activated</option>
+                <option value="1stdose" ${is1stDose}>1st Dose</option>
+                <option value="2nddose" ${is2ndDose}>2nd Dose</option>
+              </select>
+              </td>
             </tr>`;
       console.log("test", element);
     }
@@ -119,6 +162,73 @@ function showAppointmentList() {
   });
 }
 showAppointmentList();
+
+let mySelect = document.getElementById("mySelect");
+
+function myStatus(element) {
+  const selectValue = element.value;
+  const record = element.dataset.recordId;
+
+  console.log(record);
+
+  let answer = confirm("Are you sure?");
+
+  answer;
+
+  if (answer) {
+    getAPIAppointments().then((data) => {
+      for (const element of data) {
+        if (element.id == record) {
+          // Created date or submitted date
+          let dateSubmit = new Date();
+          let strDateSubmit =
+            dateSubmit.getFullYear() +
+            "-" +
+            (dateSubmit.getMonth() + 1) +
+            "-" +
+            dateSubmit.getDate() +
+            " " +
+            dateSubmit.getHours() +
+            ":" +
+            dateSubmit.getMinutes() +
+            ":" +
+            dateSubmit.getSeconds();
+
+          fetch("http://localhost:3000/appointments/" + record, {
+            method: "PUT",
+            body: JSON.stringify({
+              id: record,
+              email: element.email,
+              firstName: element.firstName,
+              lastName: element.lastName,
+              middleName: element.middleName,
+              birthday: element.gender,
+              mobileNumber: element.mobileNumber,
+              gender: element.gender,
+              completeAddress: element.completeAddress,
+              preferredCenter: element.preferredCenter,
+              created_at: element.created_at,
+              update_at: strDateSubmit,
+              preferredDate: element.preferredDate,
+              status: selectValue,
+            }),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+            },
+          })
+            .then((response) => response.json())
+            .then((json) => {
+              console.log(
+                "response put appointment admin" + JSON.stringify(json)
+              );
+            });
+        }
+      }
+    });
+  } else {
+    console.log("cancel");
+  }
+}
 
 // Parent api users
 async function getAPIUsers() {
@@ -137,14 +247,19 @@ function showUsersList() {
             </tr>`;
   getAPIUsers().then((data) => {
     for (const element of data) {
-      outputUsers += `<tr class="list-appointments">
+      let statusUser;
+      if (element.status == "activated") {
+        statusUser = "green";
+      } else {
+        statusUser = "red";
+      }
+      outputUsers += `<tr style="cursor:pointer;" data-record-id="${element.id}" class="list-appointments" onclick="selectUser(this)">
               <td>#${element.id}</td>
               <td>${element.firstName} ${element.lastName}</td>
               <td>${element.email}</td>
               <td>${element.created_at}</td>
-               <td style="color: green">${element.status}</td>
+               <td style="color: ${statusUser}">${element.status}</td>
             </tr>`;
-      console.log("users", element);
     }
 
     usersList.innerHTML = outputUsers;
@@ -228,6 +343,7 @@ menuUsers.addEventListener("click", function () {
   menuUsers.style.borderRadius = "8px";
 });
 
+// Add vaccine center admin
 function submitVaccine(event) {
   getAPI().then((data) => {
     if (data.city != cityName.value.toLocaleLowerCase()) {
@@ -278,3 +394,139 @@ function submitVaccine(event) {
     }
   });
 }
+
+// Add appointment via admin
+function submitAppointment(event) {
+  getAPIAppointments().then((data) => {
+    // Created date or submitted date
+    let dateSubmit = new Date();
+    let strDateSubmit =
+      dateSubmit.getFullYear() +
+      "-" +
+      (dateSubmit.getMonth() + 1) +
+      "-" +
+      dateSubmit.getDate() +
+      " " +
+      dateSubmit.getHours() +
+      ":" +
+      dateSubmit.getMinutes() +
+      ":" +
+      dateSubmit.getSeconds();
+
+    fetch("http://localhost:3000/appointments", {
+      method: "POST",
+      body: JSON.stringify({
+        firstName: appointmentFirstName.value.toLocaleLowerCase(),
+        lastName: appointmentLastName.value.toLocaleLowerCase(),
+        middleName: appointmentMiddleName.value.toLocaleLowerCase(),
+        birthday: appointmentBirthday.value,
+        mobileNumber: appointmentMobileNumber.value,
+        gender: appointmentGender.value.toLocaleLowerCase(),
+        completeAddress: appointmentCompleteAddress.value.toLocaleLowerCase(),
+        preferredCenter: appointmentCenter.value.toLocaleLowerCase(),
+        created_at: strDateSubmit,
+        preferredDate: appointmentVaccineDate.value,
+        status: "pending",
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        console.log("response post appointments admin" + JSON.stringify(json));
+      });
+  });
+}
+
+// Add user via admin
+function submitUser(event) {
+  getAPIUsers().then((data) => {
+    if (data.email != adminEmail.value.toLocaleLowerCase()) {
+      // Created date or submitted date
+      let dateSubmit = new Date();
+      let strDateSubmit =
+        dateSubmit.getFullYear() +
+        "-" +
+        (dateSubmit.getMonth() + 1) +
+        "-" +
+        dateSubmit.getDate() +
+        " " +
+        dateSubmit.getHours() +
+        ":" +
+        dateSubmit.getMinutes() +
+        ":" +
+        dateSubmit.getSeconds();
+
+      fetch("http://localhost:3000/users", {
+        method: "POST",
+        body: JSON.stringify({
+          email: adminEmail.value.toLocaleLowerCase(),
+          firstName: adminFirstName.value.toLocaleLowerCase(),
+          lastName: adminLastName.value.toLocaleLowerCase(),
+          password: adminPassword.value.toLocaleLowerCase(),
+          created_at: strDateSubmit,
+          status: "activated",
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          console.log("response post user admin" + JSON.stringify(json));
+        });
+    }
+  });
+}
+
+// Deactivate user
+function selectUser(element) {
+  const record = element.dataset.recordId;
+
+  let answer = confirm("Are you sure?");
+
+  answer;
+
+  if (answer) {
+    getAPIUsers().then((data) => {
+      for (const element of data) {
+        if (element.id == record) {
+          fetch("http://localhost:3000/users/" + record, {
+            method: "PUT",
+            body: JSON.stringify({
+              id: record,
+              email: element.email,
+              firstName: element.firstName,
+              lastName: element.lastName,
+              password: element.password,
+              created_at: element.created_at,
+              status: "deactivated",
+            }),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+            },
+          })
+            .then((response) => response.json())
+            .then((json) => {
+              console.log("response put user admin" + JSON.stringify(json));
+            });
+        }
+      }
+    });
+  } else {
+    console.log("cancel");
+  }
+}
+
+// disable past date in preferred date
+let newToday = new Date();
+let strToday =
+  newToday.getFullYear() +
+  "-" +
+  0 +
+  parseInt(newToday.getMonth() + 1) +
+  "-" +
+  parseInt(newToday.getDate() + 7);
+
+appointmentVaccineDate.setAttribute("min", strToday);

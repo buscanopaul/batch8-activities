@@ -209,6 +209,7 @@ header a.btn.btn-login {
   font-family: "Touche-Bold";
   margin-bottom: 10px;
   margin-top: 20px;
+  text-transform: capitalize;
 }
 
 #result p.vaccine-address {
@@ -274,6 +275,7 @@ header a.btn.btn-login {
   margin-top: 50px;
   padding-bottom: 100px;
   display: none;
+  margin-bottom: 200px;
 }
 
 #sheduleAppointment .row-appointments span {
@@ -769,7 +771,7 @@ header.login .col-right {
 }
 
 .container-body {
-  height: 100vh;
+  height: 100%;
 }
 
 .row-body {
@@ -777,6 +779,7 @@ header.login .col-right {
   justify-content: center;
   flex-flow: wrap;
   margin-top: 40px;
+  margin-bottom: 100px;
 }
 
 .row-body .card:first-child {
@@ -944,10 +947,179 @@ header.login .col-right {
   cursor: pointer;
 }
 
+img.hamburger {
+  height: 40px;
+  display: none;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #095aef;
+}
+
+footer .container .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .container .row p {
+  color: white;
+}
+
+#usersList .list-appointments td:nth-child(2),
+#appointmentsList .list-appointments td:nth-child(2),
+#appointmentsList .list-appointments td:nth-child(4),
+#appointmentsList .list-appointments td:last-child {
+  text-transform: capitalize;
+}
+
+select#appointmentGender,
+#appointmentCenter {
+  border: none;
+  border-radius: 8px;
+  line-height: 44px;
+  padding: 13px 20px;
+  outline: none;
+  margin-bottom: 15px;
+  width: 100%;
+  position: relative;
+}
+
 .row-boy .text-bold {
   font-family: Roboto-Bold;
 }
 
 .text-color-blue {
   color: #0660fe;
+}
+
+#appointmentBirthday::-webkit-calendar-picker-indicator,
+#appointmentVaccineDate::-webkit-calendar-picker-indicator {
+  filter: invert(0);
+}
+
+@media only screen and (max-width: 1199px) {
+  .hamburger {
+    display: block !important;
+  }
+
+  header .col-right ul,
+  a.btn.btn-login {
+    display: none;
+  }
+  #header .row {
+    flex-direction: column;
+  }
+
+  #header .row .col-left,
+  #header .row .col-right {
+    width: 100%;
+    padding: 0;
+  }
+
+  #header .container {
+    background-color: #f4f6fe;
+  }
+  #header {
+    height: 100%;
+  }
+  #result .card {
+    width: 100%;
+  }
+  #sheduleAppointment .row-appoint-form {
+    flex-direction: column;
+  }
+  #sheduleAppointment input {
+    width: 100% !important;
+    max-width: 100%;
+    margin-bottom: 30px !important;
+    margin: 0;
+  }
+  #sheduleAppointment select {
+    width: 100%;
+  }
+  #header h1 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  #result h2 {
+    font-size: 35px;
+    line-height: 45px;
+  }
+  #sheduleAppointment h2 {
+    font-size: 40px;
+    line-height: 60px;
+  }
+  .row.row-login {
+    flex-direction: column;
+  }
+  .row-login .col-left,
+  .row-login .col-right {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  .row-login .col-left h1 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .row-login .col-right h3 {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  header.login .col-right {
+    background: #f3f6fd;
+  }
+  #headerVaccine {
+    flex-direction: column;
+  }
+  .row-dashboard-header .col-left {
+    width: 100%;
+    padding-right: 0;
+  }
+  .row-dashboard-header .col-right {
+    padding: 0;
+    width: 100%;
+    padding-bottom: 100px;
+  }
+  .row-dashboard-header .col-left h1 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .row-dashboard-header .col-left a {
+    width: auto;
+  }
+  .container-dashboard {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .row-body {
+    flex-direction: column;
+  }
+  .row-body .card {
+    width: 100%;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  #headerAppointments {
+    padding: 150px 0;
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+  }
+  div#headerUsers {
+    flex-direction: column;
+    padding-bottom: 100px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .row-menu-admin {
+    flex-direction: column;
+  }
+  .row-dashboard-header .col-right h1 {
+    padding-top: 100px;
+  }
 }

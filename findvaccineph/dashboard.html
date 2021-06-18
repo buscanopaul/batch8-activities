@@ -29,6 +29,7 @@
             </a>
           </div>
           <div class="col-right">
+            <img src="assets/images/menu.png" alt="menu" class="hamburger" />
             <ul>
               <li><a href="/findvaccineph/" class="text-bold">Home</a></li>
               <li><a href="#">News</a></li>
@@ -134,13 +135,6 @@
               required
             />
             <input
-              type="text"
-              id="appointmentMiddleName"
-              name="appointmentMiddleName"
-              placeholder="Enter Middle Name"
-              required
-            />
-            <input
               type="date"
               id="appointmentBirthday"
               name="appointmentBirthday"
@@ -166,12 +160,16 @@
               placeholder="Enter Complete Address"
               required
             />
-            <select id="appointmentGender" name="appointmentGender">
+            <select id="appointmentCenter" name="appointmentCenter">
               <option value="" disabled selected>
                 Preferred Vaccine Center *
               </option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              <option value="bagong silang high school">
+                Bagong Silang High School
+              </option>
+              <option value="bagumbong high school">
+                Bagumbong High School
+              </option>
             </select>
 
             <input
@@ -182,10 +180,10 @@
               required
             />
             <input
-              onclick="submitLogin(event)"
+              onclick="submitAppointment(event)"
               type="submit"
               value="Submit"
-              id="btnSubmitAppointment"
+              id="btnSubmitVaccine"
             />
           </div>
         </div>
@@ -205,48 +203,41 @@
             <h1>Add Admin User</h1>
             <input
               type="text"
-              id="country"
-              name="country"
-              placeholder="Enter Country"
+              id="adminFirstName"
+              name="adminFirstName"
+              placeholder="Enter First Name"
               required
             />
             <input
               type="text"
-              id="cityName"
-              name="cityName"
-              placeholder="Enter City"
+              id="adminLastName"
+              name="adminLastName"
+              placeholder="Enter Last Name"
               required
             />
             <input
-              type="text"
-              id="barangayName"
-              name="barangayName"
-              placeholder="Enter Barangay"
+              type="email"
+              id="adminEmail"
+              name="adminEmail"
+              placeholder="Enter Email"
               required
             />
             <input
-              type="text"
-              id="centerName"
-              name="centerName"
-              placeholder="Enter Center"
+              type="password"
+              id="adminPassword"
+              name="adminPassword"
+              placeholder="Enter Password"
               required
             />
             <input
-              type="text"
-              id="centerAddress"
-              name="centerAddress"
-              placeholder="Enter Center Address"
+              type="password"
+              id="adminConfirmPassword"
+              name="adminConfirmPassword"
+              placeholder="Enter Confirm Password"
               required
             />
             <input
-              type="text"
-              id="vaccineType"
-              name="vaccineType"
-              placeholder="Enter Vaccine Type"
-              required
-            />
-            <input
-              onclick="submitLogin(event)"
+              onclick="submitUser(event)"
               type="submit"
               value="Submit"
               id="btnSubmitVaccine"
@@ -271,6 +262,14 @@
         </div>
       </div>
     </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-left"><p>© Find Vaccine PH 2021</p></div>
+          <div class="col-right"><p>Develop and design by Paul</p></div>
+        </div>
+      </div>
+    </footer>
   </body>
   <script src="assets/scripts/dashboard.js" async></script>
 </html>
