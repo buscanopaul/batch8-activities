@@ -1,0 +1,12 @@
+# Display the count of all students
+SELECT count(*) FROM subjects.students;
+#output 5
+
+# Select all students with location is Manila
+SELECT * FROM subjects.students WHERE location='Manila';
+
+# Display the average age of all students
+SELECT AVG(age)::numeric(10) FROM subjects.students;
+
+# Display all students by age descending order
+SELECT * FROM subjects.students ORDER BY age DESC;
