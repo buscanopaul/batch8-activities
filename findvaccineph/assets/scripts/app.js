@@ -167,7 +167,7 @@ function myBarangay() {
 }
 
 async function getAPI() {
-  const response = await fetch("http://localhost:3000/facilities");
+  const response = await fetch("https://my-find-covid-api.herokuapp.com/facilities");
   const data = await response.json();
   return data;
 }
@@ -293,7 +293,7 @@ function submitForm() {
       ":" +
       dateSubmit.getSeconds();
 
-    fetch("http://localhost:3000/appointments", {
+    fetch("https://my-find-covid-api.herokuapp.com/appointments", {
       method: "POST",
       body: JSON.stringify({
         firstName: firstName.value,

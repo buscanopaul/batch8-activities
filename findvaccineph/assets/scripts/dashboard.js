@@ -55,7 +55,7 @@ let adminConfirmPassword = document.getElementById("adminConfirmPassword");
 
 // Parent api
 async function getAPI() {
-  const response = await fetch("http://localhost:3000/facilities");
+  const response = await fetch("https://my-find-covid-api.herokuapp.com/facilities");
   const data = await response.json();
   return data;
 }
@@ -108,7 +108,7 @@ showVaccineList();
 
 // Parent api appointments
 async function getAPIAppointments() {
-  const response = await fetch("http://localhost:3000/appointments");
+  const response = await fetch("https://my-find-covid-api.herokuapp.com/appointments");
   const data = await response.json();
   return data;
 }
@@ -194,7 +194,7 @@ function myStatus(element) {
             ":" +
             dateSubmit.getSeconds();
 
-          fetch("http://localhost:3000/appointments/" + record, {
+          fetch("https://my-find-covid-api.herokuapp.com/appointments/" + record, {
             method: "PUT",
             body: JSON.stringify({
               id: record,
@@ -232,7 +232,7 @@ function myStatus(element) {
 
 // Parent api users
 async function getAPIUsers() {
-  const response = await fetch("http://localhost:3000/users");
+  const response = await fetch("https://my-find-covid-api.herokuapp.com/users");
   const data = await response.json();
   return data;
 }
@@ -364,7 +364,7 @@ function submitVaccine(event) {
         ":" +
         dateSubmit.getSeconds();
 
-      fetch("http://localhost:3000/facilities", {
+      fetch("https://my-find-covid-api.herokuapp.com/facilities", {
         method: "POST",
         body: JSON.stringify({
           city: cityName.value.toLocaleLowerCase(),
@@ -413,7 +413,7 @@ function submitAppointment(event) {
       ":" +
       dateSubmit.getSeconds();
 
-    fetch("http://localhost:3000/appointments", {
+    fetch("https://my-find-covid-api.herokuapp.com/appointments", {
       method: "POST",
       body: JSON.stringify({
         firstName: appointmentFirstName.value.toLocaleLowerCase(),
@@ -458,7 +458,7 @@ function submitUser(event) {
         ":" +
         dateSubmit.getSeconds();
 
-      fetch("http://localhost:3000/users", {
+      fetch("https://my-find-covid-api.herokuapp.com/users", {
         method: "POST",
         body: JSON.stringify({
           email: adminEmail.value.toLocaleLowerCase(),
@@ -492,7 +492,7 @@ function selectUser(element) {
     getAPIUsers().then((data) => {
       for (const element of data) {
         if (element.id == record) {
-          fetch("http://localhost:3000/users/" + record, {
+          fetch("https://my-find-covid-api.herokuapp.com/users/" + record, {
             method: "PUT",
             body: JSON.stringify({
               id: record,

@@ -2,7 +2,7 @@ let emailAdmin = document.getElementById("emailAdmin");
 let passwordAdmin = document.getElementById("passwordAdmin");
 
 async function getAPI() {
-  const response = await fetch("http://localhost:3000/users");
+  const response = await fetch("https://my-find-covid-api.herokuapp.com/users");
   const data = await response.json();
   return data;
 }
