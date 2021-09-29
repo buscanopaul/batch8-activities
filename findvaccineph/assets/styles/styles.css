@@ -1123,3 +1123,7 @@ select#appointmentGender,
     padding-top: 100px;
   }
 }
+
+#searchBarangaySuggestion li:not(:first-child) {
+    display: none !important;
+}
